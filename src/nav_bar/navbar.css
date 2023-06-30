@@ -3,35 +3,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: white;
   padding: 10px;
+  border-radius: 5px;
+  font-family: Rubik, sans-serif;
 }
 
 /* Logo */
 .logo {
   font-weight: bold;
-  height: 50px;
   background-image: none;
   border-radius: 25px;
   margin-left: 20px;
+  width: 200px;
 }
 
 /* Navbar sections */
 .nav-sections {
   display: flex;
+  text-align: center;
+  padding-right: 85px;
 }
 
 .nav-sections li {
   list-style-type: none;
   margin-right: 10px;
+  position: relative; /* Add position relative to the list item */
 }
 
-.nav-sections li a {
+.nav-sections li a,
+.nav-bar-sign-in {
   text-decoration: none;
-  color: #333;
+  color: gray;
   padding: 5px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+  position: relative;
 }
 
+.nav-sections li a:hover,
+.nav-bar-sign-in:hover {
+  color: rgb(255, 208, 0);
+}
+
+.nav-sections li a::after,
+.nav-bar-sign-in::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: rgb(255, 208, 0);
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.2s ease-in-out;
+}
+
+.nav-sections li a:hover::after,
+.nav-bar-sign-in:hover::after {
+  width: 100%;
+}
+
+
+/* buttons */
+.nav-buttons a {
+  justify-content: space-between;
+}
+.nav-bar-register{
+  
+}
 /* Dropdown */
 .dropdown {
   position: relative;
