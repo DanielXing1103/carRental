@@ -13,7 +13,6 @@ const Navbar = () => {
       <ul className="nav-sections">
         {titles.map((title) => {
           const { name, url, id } = title;
-          console.log(name);
           return (
             <li key={id}>
               <a href={url}>{name}</a>
