@@ -1,16 +1,16 @@
 import { useState } from "react";
-import bar from "./logo/bar.png";
 import logo from "./logo/png/logo-no-background.png";
 import { titles } from "./data.jsx";
 import "./navbar.css"; // Import the CSS file
 
 const Navbar = () => {
+  const [bar, setBars] = useState(false);
   return (
     <nav className="navbar">
       <a href="index.html">
         <img src={logo} alt="bar" className="logo" />
       </a>
-      <ul className="nav-sections">
+      <ul className={bar ? "nav-sections" : "nav-sections none"}>
         {titles.map((title) => {
           const { name, url, id } = title;
           return (
@@ -19,14 +19,26 @@ const Navbar = () => {
             </li>
           );
         })}
+
+        <div className="nav-buttons">
+          <a href="/" className="nav-bar-sign-in">
+            Sign In
+          </a>
+          <a href="/" className="nav-bar-register">
+            Register
+          </a>
+        </div>
       </ul>
-      <div className="nav-buttons">
-        <a href="/" className="nav-bar-sign-in">
-          Sign In
-        </a>
-        <a href="/" className="nav-bar-register">
-          Register
-        </a>
+
+      <div className="dropdown">
+        <i
+          className={
+            bar ? "fa-solid fa-times fa-2xl" : "fa-solid fa-bars fa-2xl"
+          }
+          onClick={() => {
+            setBars(!bar);
+          }}
+        ></i>
       </div>
     </nav>
   );
