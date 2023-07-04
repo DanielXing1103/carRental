@@ -22,10 +22,10 @@ const Navbar = () => {
         })}
 
         <div className="nav-buttons">
-          <a href="/" className="nav-bar-sign-in">
+          <a href="/login" className="nav-bar-sign-in">
             Sign In
           </a>
-          <a href="/" className="nav-bar-register">
+          <a href="/login" className="nav-bar-register">
             Register
           </a>
         </div>
