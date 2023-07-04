@@ -10,6 +10,7 @@ const Navbar = () => {
       <a href="index.html">
         <img src={logo} alt="bar" className="logo" />
       </a>
+      <div className="flex-grow"></div>
       <ul className={bar ? "nav-sections" : "nav-sections none"}>
         {titles.map((title) => {
           const { name, url, id } = title;

@@ -1,0 +1,58 @@
+.container {
+  background-image: url(./img/Car-Hero.webp);
+  padding: 80px;
+  margin: -11px;
+  padding-bottom: 90px;
+}
+
+.text {
+  color: white;
+  max-width: 40rem;
+}
+
+.text h4 {
+  font-size: 1.3rem;
+}
+
+.text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+  font-weight: lighter;
+}
+
+
+
+.reserve-buttons a {
+  text-decoration: none;
+  color: white;
+  padding: 18px;
+  border-radius: 8px;
+  margin-right: 17px;
+  border: 2.5px solid transparent; /* Add transparent border to reserve space */
+
+  transition: 0.2s ease-in-out;
+}
+
+.Book-Ride-button {
+  background-color: #ffd725;
+  box-shadow: 5px 5px 15px 0 #fae06c;
+}
+.Book-Ride-button:hover {
+  box-shadow: 5px 5px 15px 0 #ffe100;
+}
+.learn-more-buttons {
+  background-color: black;
+}
+.learn-more-buttons:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-width: 2.5px; /* Add the desired border width */
+  border-style: solid; /* Add the desired border style */
+}
