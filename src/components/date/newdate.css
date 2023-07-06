@@ -1,0 +1,63 @@
+.date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+.date-content {
+  width: 30vw;
+  padding: 30px 30px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.date-container .date-content .text {
+  font-size: 1.4em;
+  color: black;
+  font-weight: 500;
+}
+.date-container .date-content .form {
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  font-size: 1.1em;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-container .date-content .form input {
+  width: 25vw;
+  height: 35px;
+  margin: 10px 0;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.date-container .colored-button {
+  border: none;
+}
+.container.show {
+  display: block;
+}
+.container.hide {
+  display: none;
+}
+
+.alert {
+  text-align: center;
+  font-size: 20px;
+  background-color: pink;
+  padding: 10px;
+  color: palevioletred;
+  border-radius: 10px;
+}
+.alert {
+  display: block;
+}
+.alert.off {
+  display: none;
+}

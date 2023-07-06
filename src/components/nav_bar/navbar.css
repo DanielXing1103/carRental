@@ -1,5 +1,7 @@
 /* Navbar container */
-
+body{
+  background-color: #313552
+}
 .navbar {
   margin-top: 10px;
   position: fixed;
@@ -43,7 +45,7 @@
 
 .nav-sections li a:hover,
 .nav-bar-sign-in:hover {
-  color: rgb(255, 208, 0);
+  color: #2779a7;
 }
 
 .nav-sections li a::after,
@@ -51,7 +53,8 @@
   content: "";
   width: 0px;
   height: 2px;
-  background-color: rgb(255, 208, 0);
+  background-color:#2779a7;
+;
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -74,17 +77,18 @@
 .nav-bar-sign-in {
   margin-right: 10px;
 }
-.nav-bar-register {
+.colored-button {
   text-decoration: none;
   color: white;
   padding: 13px;
-  background-color: #ffd725;
+  background-color: #2779a7;
+
   border-radius: 8px;
-  box-shadow: 5px 5px 15px 0 #fff0b0;
+  box-shadow: 5px 5px 15px 0 #a2ddff;
   margin-right: 7px;
 }
 
-.nav-bar-register:hover {
+.colored-button:hover {
   opacity: 0.8; /* Adjust the opacity level to your preference */
 }
 
@@ -93,7 +97,7 @@
   display: none;
 }
 .dropdown i {
-  color: #ffd725;
+  color: #2779a7;;
 }
 
 /* Media screen */
