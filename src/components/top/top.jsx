@@ -3,7 +3,7 @@ import "./top.css";
 const Top = () => {
   return (
     <div>
-      <div className="container">
+      <div className="top-container">
         <div className="text">
           <h4>Plan your trip now</h4>
           <h1>Save big with our car rental</h1>

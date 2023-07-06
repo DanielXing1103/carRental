@@ -1,22 +1,22 @@
-.date-container {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
 }
-.date-content {
+.content {
   width: 30vw;
   padding: 30px 30px;
   border-radius: 20px;
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
-.date-container .date-content .text {
+.container  .text {
   font-size: 1.4em;
   color: black;
   font-weight: 500;
 }
-.date-container .date-content .form {
+.container .form {
   padding: 30px;
   border-radius: 5px;
   border: 1px solid var(--grey);
@@ -27,7 +27,7 @@
   align-items: center;
 }
 
-.date-container .date-content .form input {
+.container .form input {
   width: 25vw;
   height: 35px;
   margin: 10px 0;
@@ -37,7 +37,7 @@
   border: 1px solid gray;
   border-radius: 5px;
 }
-.date-container .colored-button {
+.container .colored-button {
   border: none;
 }
 .container.show {
@@ -60,4 +60,12 @@
 }
 .alert.off {
   display: none;
+}
+.hide{
+  display: none;
+}
+
+.car-display{
+  display: grid;
+  grid-row: 4;
 }

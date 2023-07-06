@@ -1,6 +1,6 @@
 export const CAR_DATA = [
-  [
     {
+      id: "1",
       name: "VW Golf 6",
       price: "37",
       model: "Golf 6",
@@ -11,9 +11,8 @@ export const CAR_DATA = [
       transmission: "Manual",
       fuel: "Diesel",
     },
-  ],
-  [
     {
+      id: "2",
       name: "Audi A1 S-Line",
       price: "45",
       model: "Audi",
@@ -24,9 +23,9 @@ export const CAR_DATA = [
       transmission: "Manual",
       fuel: "Gasoline",
     },
-  ],
-  [
+  
     {
+      id: "3",
       name: "Toyota Camry",
       price: "30",
       model: "Camry",
@@ -37,9 +36,9 @@ export const CAR_DATA = [
       transmission: "Automatic",
       fuel: "Hybrid",
     },
-  ],
-  [
+  
     {
+      id: "4",
       name: "BMW 320 ModernLine",
       price: "35",
       model: "320",
@@ -50,9 +49,9 @@ export const CAR_DATA = [
       transmission: "Manual",
       fuel: "Diesel",
     },
-  ],
-  [
+  
     {
+      id: "5",
       name: "Mercedes-Benz GLK",
       price: "50",
       model: "Benz GLK",
@@ -63,9 +62,9 @@ export const CAR_DATA = [
       transmission: "Manual",
       fuel: "Diesel",
     },
-  ],
-  [
+  
     {
+      id: "6",
       name: "VW Passat CC",
       price: "25",
       model: "Passat CC",
@@ -76,5 +75,4 @@ export const CAR_DATA = [
       transmission: "Automatic",
       fuel: "Gasoline",
     },
-  ],
 ];
