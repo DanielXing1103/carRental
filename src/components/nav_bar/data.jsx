@@ -2,30 +2,30 @@ export const titles = [
   {
     id: "1",
     name: "Home",
-    url: "index.html",
+    url: "/",
   },
   {
     id: "2",
 
     name: "Rentals",
-    url: "index.html",
+    url: "/",
   },
   {
     id: "3",
 
     name: "About",
-    url: "index.html",
+    url: "/",
   },
   {
     id: "4",
 
     name: "Testimonials",
-    url: "index.html",
+    url: "/",
   },
   {
     id: "5",
 
     name: "Contact",
-    url: "index.html",
+    url: "/",
   },
 ];

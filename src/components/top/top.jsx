@@ -13,7 +13,7 @@ const Top = () => {
           </p>
         </div>
         <div className="reserve-buttons">
-          <a href="/login" className="Book-Ride-button">
+          <a href="/book" className="Book-Ride-button">
             Book Ride
           </a>
           <a href="/" className="learn-more-buttons">
