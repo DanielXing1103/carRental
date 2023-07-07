@@ -1,10 +1,9 @@
 .top-container {
   background-image: url(./img/Car-Hero.webp);
   padding: 80px;
-  margin: -11px;
+  margin: 0 -10px;
   padding-bottom: 90px;
 }
-
 .text {  
   color: white;
   max-width: 30rem;
@@ -39,12 +38,8 @@
   transition: 0.2s ease-in-out;
 }
 
-.Book-Ride-button {
-  background-color: #ffd725;
-  box-shadow: 3px 3px 15px 0 #fae06c;
-}
-.Book-Ride-button:hover {
-  box-shadow: 3px 3px 15px 0 #ffe100;
+.reserve-buttons .colored-button{
+  
 }
 .learn-more-buttons {
   background-color: black;

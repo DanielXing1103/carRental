@@ -3,7 +3,7 @@ body{
   background-color: #313552
 }
 .navbar {
-  margin-top: 10px;
+  margin-top: 0px;
   position: fixed;
   background-color: white;
   display: flex;
@@ -84,7 +84,7 @@ body{
   background-color: #2779a7;
 
   border-radius: 8px;
-  box-shadow: 5px 5px 15px 0 #a2ddff;
+  box-shadow: 2px 3px 7px #1e6187;
   margin-right: 7px;
 }
 
@@ -101,7 +101,7 @@ body{
 }
 
 /* Media screen */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .nav-sections.none {
     right: -300px;
   }

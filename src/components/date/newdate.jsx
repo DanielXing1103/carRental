@@ -6,7 +6,7 @@ import "./newdate.css";
 
 function Booking() {
   const [input, setInput] = useState(true);
-
+  const [display, setDisplay] = useState(true);
   const handleSubmit = (e) => {
     e.preventDefault();
     const pickupDate = document.getElementById("pickup-date").value;
@@ -23,36 +23,37 @@ function Booking() {
       localStorage.setItem("dates", JSON.stringify(dates));
 
       setInput(true);
+      setDisplay(false)
     } else {
       setInput(false);
     }
-    console.log(localStorage.getItem("dates"));
   };
 
   return (
     <div className="container">
-      <Bookcars />
-      <div className="hide">
+      <Bookcars dateDisplay={display}/>
+      <div className={display?"date-content":"hide"}>
         <div className="text">Book a Car</div>
         <h1 className={input ? "alert off" : "alert"}>All fields required</h1>
         <form onSubmit={handleSubmit} className="form">
-          <div className="input-data">
-            <div className="txt">Select pickup date and time</div>
-            <input type="date" name="" id="pickup-date" />
+          <div className="form-element">
+            <div className="input-data">
+              <div className="txt">Select pickup date and time</div>
+              <input type="date" name="" id="pickup-date" />
+            </div>
+            <div className="input-data">
+              <input type="time" name="" id="pickup-time" />
+            </div>
           </div>
-
-          <div className="input-data">
-            <input type="time" name="" id="pickup-time" />
+          <div className="form-element">
+            <div className="input-data">
+              <div className="txt">Select dropoff date and time</div>
+              <input type="date" name="" id="dropoff-date" />
+            </div>
+            <div className="input-data">
+              <input type="time" name="" id="dropoff-time" />
+            </div>
           </div>
-
-          <div className="input-data">
-            <div className="txt">Select dropoff date and time</div>
-            <input type="date" name="" id="dropoff-date" />
-          </div>
-          <div className="input-data">
-            <input type="time" name="" id="dropoff-time" />
-          </div>
-
           <button type="submit" className="colored-button">
             Submit
           </button>
