@@ -3,18 +3,23 @@ import "../date/newdate.css";
 import { CAR_DATA } from "./car-data";
 import Contact from "../contact/contact";
 const bookCar = (props) => {
-  const [display, setDisplay] = useState(false);
-  useEffect(() => {
-    setDisplay(!props.dateDisplay);
-  }, [props.dateDisplay]);
+  const [display, setDisplay] = useState(1);
+  useEffect(()=>{
+    if(props.display==2){
+      setDisplay(2);
+    }
+    
+  },[props.display])
   const handleSubmit = (car) => {
     localStorage.setItem("car", JSON.stringify(car));
-    setDisplay(false);
+    setDisplay(3);
+    console.log(display);
   };
   return (
     <div className="container">
-      <Contact />
-      <div className={display ? "car-content" : "hide"}>
+      <Contact display={display} />
+      <div className={display == 2 ? "car-content" : "hide"}>
+        {/* <div className={"hide"}> */}
         <div className="text">Book a Car</div>
         <div className="car-display">
           {CAR_DATA.map((car) => {
