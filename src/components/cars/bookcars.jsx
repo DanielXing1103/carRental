@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
-import "../date/newdate.css";
+import "../date/date.css";
 import { CAR_DATA } from "./car-data";
 import Contact from "../contact/contact";
 const bookCar = (props) => {
-  const [display, setDisplay] = useState(1);
-  useEffect(()=>{
-    if(props.display==2){
-      setDisplay(2);
+  useEffect(() => {
+    //update book page to car page if display is 2.
+    if (props.display == 2) {
+      props.setDisplay(2);
     }
-    
-  },[props.display])
+  }, [props.display]);
+
   const handleSubmit = (car) => {
+    //save the data
     localStorage.setItem("car", JSON.stringify(car));
-    setDisplay(3);
-    console.log(display);
+    //display contact page
+    props.setDisplay(3);
   };
   return (
     <div className="container">
-      <Contact display={display} />
-      <div className={display == 2 ? "car-content" : "hide"}>
-        {/* <div className={"hide"}> */}
+      <Contact display={props.display} setDisplay={props.setDisplay} />
+      <div className={props.display == 2 ? "car-content" : "hide"}>
         <div className="text">Book a Car</div>
         <div className="car-display">
           {CAR_DATA.map((car) => {

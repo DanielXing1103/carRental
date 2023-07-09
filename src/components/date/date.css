@@ -1,13 +1,16 @@
+.pad {
+  padding-top: 85px;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
 }
 
 .car-content,
 .date-content,
-.contact-content {
+.contact-content,
+.confirmation-content {
   width: 75vw;
   padding: 30px 30px;
   border-radius: 5px;
@@ -53,8 +56,8 @@
   font-size: large;
 }
 .container .contact-content .colored-button {
-width: 30vw;
-min-width: 240px;
+  width: 30vw;
+  min-width: 240px;
 }
 .center {
   display: flex;
@@ -117,6 +120,28 @@ min-width: 240px;
   display: flex;
   flex-direction: column;
 }
-b{
-  color:red
+b {
+  color: red;
+}
+
+.confirm-detail {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  color: rgb(165, 165, 165);
+  padding-left: 40px;
+  margin: 10px;
+}
+.confirm-detail .content {
+  color: black;
+}
+.container a {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.container .confirm-header {
+  margin-top: 40px;
+  display: inline-block;
 }
