@@ -10,7 +10,8 @@
 .car-content,
 .date-content,
 .contact-content,
-.confirmation-content {
+.confirmation-content,
+.submitted-content {
   width: 75vw;
   padding: 30px 30px;
   border-radius: 5px;
@@ -140,8 +141,12 @@ b {
   font-size: 12px;
   text-decoration: none;
   cursor: pointer;
+  color: darkblue;
 }
 .container .confirm-header {
   margin-top: 40px;
   display: inline-block;
+}
+.check-mark{
+  width: 100px;
 }

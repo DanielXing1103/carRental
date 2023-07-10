@@ -1,9 +1,9 @@
-import audi from "../../logo/cars-big/audi-box.png";
-import benz from "../../logo/cars-big/benz-box.png";
-import bmw from "../../logo/cars-big/bmw-box.png";
-import golf6 from "../../logo/cars-big/golf6-box.png";
-import passat from "../../logo/cars-big/passat-box.png";
-import toyota from "../../logo/cars-big/toyota-box.png";
+import audi from "../../image/cars-big/audi-box.png";
+import benz from "../../image/cars-big/benz-box.png";
+import bmw from "../../image/cars-big/bmw-box.png";
+import golf6 from "../../image/cars-big/golf6-box.png";
+import passat from "../../image/cars-big/passat-box.png";
+import toyota from "../../image/cars-big/toyota-box.png";
 export const CAR_DATA = [
   {
     id: "1",

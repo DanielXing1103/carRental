@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "./logo/png/logo-no-background.png";
+import logo from "../../image/png/logo-no-background.png";
 import { titles } from "./data.jsx";
 import "./navbar.css"; // Import the CSS file
 
@@ -22,11 +22,8 @@ const Navbar = () => {
         })}
 
         <div className="nav-buttons">
-          <a href="/book" className="nav-bar-sign-in">
-            Sign In
-          </a>
           <a href="/book" className="colored-button">
-            Register
+            Book Now
           </a>
         </div>
       </ul>

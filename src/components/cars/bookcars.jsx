@@ -8,6 +8,7 @@ const bookCar = (props) => {
     if (props.display == 2) {
       props.setDisplay(2);
     }
+    console.log(props.display)
   }, [props.display]);
 
   const handleSubmit = (car) => {

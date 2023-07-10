@@ -34,8 +34,7 @@ body{
   margin-right: 10px;
 }
 
-.nav-sections li a,
-.nav-bar-sign-in {
+.nav-sections li a{
   text-decoration: none;
   color: gray;
   padding: 5px;
@@ -43,13 +42,11 @@ body{
   position: relative;
 }
 
-.nav-sections li a:hover,
-.nav-bar-sign-in:hover {
+.nav-sections li a:hover{
   color: #2779a7;
 }
 
-.nav-sections li a::after,
-.nav-bar-sign-in::after {
+.nav-sections li a::after{
   content: "";
   width: 0px;
   height: 2px;
@@ -62,8 +59,7 @@ body{
   transition: 0.2s ease-in-out;
 }
 
-.nav-sections li a:hover::after,
-.nav-bar-sign-in:hover::after {
+.nav-sections li a:hover::after{
   width: 100%;
 }
 
@@ -74,9 +70,7 @@ body{
   justify-content: space-between;
 }
 
-.nav-bar-sign-in {
-  margin-right: 10px;
-}
+
 .colored-button {
   text-decoration: none;
   color: white;

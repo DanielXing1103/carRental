@@ -1,12 +1,15 @@
+import { useEffect } from "react";
 import "../date/date.css";
-
+import Submitted from "./submitted.jsx";
 const Confirmation = (props) => {
   //check for local storage
   const localDates = localStorage.getItem("dates");
   const localCar = localStorage.getItem("car");
   const localContacts = localStorage.getItem("contacts");
   //if some not valid do not run code
-  if (!localDates || !localCar || !localContacts) {
+  if (props.display == 5) {
+    return <Submitted />;
+  } else if (!localDates || !localCar || !localContacts) {
     return;
   }
   //retrieve data from local storage
@@ -26,11 +29,16 @@ const Confirmation = (props) => {
     state,
     zipCode,
   } = JSON.parse(localStorage.getItem("contacts"));
+  const handleSubmit = () => {
+    localStorage.removeItem("dates");
+    localStorage.removeItem("car");
+    localStorage.removeItem("contacts");
+    props.setDisplay(5);
+  };
 
   return (
     <div className="container">
       <div className={props.display == 4 ? "confirmation-content" : "hide"}>
-        <div className="text">Confirmation</div>
         <div className="center">
           <div>
             <h3 className="confirm-header">Dates</h3>
@@ -146,8 +154,14 @@ const Confirmation = (props) => {
           </div>
         </div>
         <div className="center">
-          <button className="colored-button" onClick={()=>{props.setDisplay(5);
-          localStorage.setItem("end",true)}}>Confirm</button>
+          <button
+            className="colored-button"
+            onClick={() => {
+              handleSubmit();
+            }}
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>
