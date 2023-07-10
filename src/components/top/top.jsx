@@ -1,4 +1,3 @@
-import "./top.css";
 
 const Top = () => {
   return (

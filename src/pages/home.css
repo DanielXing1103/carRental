@@ -1,7 +1,5 @@
 /* Navbar container */
-body{
-  background-color: #313552
-}
+
 .navbar {
   margin-top: 0px;
   position: fixed;
@@ -34,7 +32,7 @@ body{
   margin-right: 10px;
 }
 
-.nav-sections li a{
+.nav-sections li a {
   text-decoration: none;
   color: gray;
   padding: 5px;
@@ -42,16 +40,15 @@ body{
   position: relative;
 }
 
-.nav-sections li a:hover{
+.nav-sections li a:hover {
   color: #2779a7;
 }
 
-.nav-sections li a::after{
+.nav-sections li a::after {
   content: "";
   width: 0px;
   height: 2px;
-  background-color:#2779a7;
-;
+  background-color: #2779a7;
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -59,7 +56,7 @@ body{
   transition: 0.2s ease-in-out;
 }
 
-.nav-sections li a:hover::after{
+.nav-sections li a:hover::after {
   width: 100%;
 }
 
@@ -69,7 +66,6 @@ body{
   margin-left: 10px;
   justify-content: space-between;
 }
-
 
 .colored-button {
   text-decoration: none;
@@ -91,7 +87,7 @@ body{
   display: none;
 }
 .dropdown i {
-  color: #2779a7;;
+  color: #2779a7;
 }
 
 /* Media screen */
@@ -128,4 +124,95 @@ body{
     margin-left: 20px;
     width: 200px;
   }
+}
+.top-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../image/Car-Hero.webp);
+  padding: 80px;
+  margin: 0 -10px;
+  padding-bottom: 90px;
+}
+.text {
+  color: white;
+  max-width: 30rem;
+}
+
+.text h4 {
+  font-size: 1.3rem;
+}
+
+.text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+  font-weight: lighter;
+}
+
+.reserve-buttons a {
+  text-decoration: none;
+  color: white;
+  padding: 18px;
+  border-radius: 8px;
+  margin-right: 17px;
+  border: 2.5px solid transparent; /* Add transparent border to reserve space */
+
+  transition: 0.2s ease-in-out;
+}
+.learn-more-buttons {
+  background-color: black;
+}
+.learn-more-buttons:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-width: 2.5px; /* Add the desired border width */
+  border-style: solid; /* Add the desired border style */
+}
+
+.white-container {
+  background-color: white;
+  margin: 30px 10px;
+  border-radius: 5px;
+  padding: 50px 0px;
+}
+
+.topic-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topic-content .center {
+    margin-bottom: 100px;
+  width: 300px;
+}
+.topic-icon {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+.topic-content p {
+  color: rgb(153, 152, 152);
+}
+.topic-content h1 {
+  color: #2779a7;
+}
+.topic-title {
+  color: #2779a7;
+
+  font-size: 50px;
+  margin: 20px;
+  font-weight: bold;
 }

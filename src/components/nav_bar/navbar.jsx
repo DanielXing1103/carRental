@@ -1,13 +1,12 @@
 import { useState } from "react";
 import logo from "../../image/png/logo-no-background.png";
 import { titles } from "./data.jsx";
-import "./navbar.css"; // Import the CSS file
 
 const Navbar = () => {
   const [bar, setBars] = useState(false);
   return (
     <nav className="navbar">
-      <a href="index.html">
+      <a href="/">
         <img src={logo} alt="bar" className="logo" />
       </a>
       <div className="flex-grow"></div>
