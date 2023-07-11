@@ -32,7 +32,7 @@ const Submitted = () => {
                 <strong>Request ID:</strong> {<RequestIdGenerator />}
               </li>
               <li>
-                <strong>Date and Time:</strong> {formattedDate}
+                <strong>Date:</strong> {formattedDate}
               </li>
             </ul>
             <p>

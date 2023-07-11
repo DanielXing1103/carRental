@@ -175,10 +175,8 @@
 }
 
 .white-container {
-  background-color: white;
-  margin: 30px 10px;
-  border-radius: 5px;
-  padding: 50px 0px;
+  margin: 0px 10px;
+  padding: 0px 0px;
 }
 
 .topic-content {

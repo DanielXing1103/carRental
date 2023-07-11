@@ -9,7 +9,7 @@ const Section = () => {
       <div className="center">
         <h2>Plan your trip now</h2>
         <p className="topic-title">Quick & easy car rental</p>
-        <div className="pad"></div>
+        <div className="pad"></div> 
       </div>
       <div className="topic-content">
         <div className="center">
