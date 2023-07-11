@@ -11,7 +11,7 @@ import toyota from "../../image/cars-big/toyotacamry.jpg";
      name: "VW Golf 6",
      image: golf,
      description:
-       "The VW Golf 6, produced from 2008 to 2012, is the sixth generation of Volkswagen's iconic Golf series. It boasts a modern and aerodynamic design with sleek lines, offering a stylish appearance. With options like hatchback and wagon variants, the Golf 6 provides versatility. It offers a range of engine choices for a balance of performance and efficiency. Inside, it features a well-designed interior with comfortable seating and user-friendly controls. The VW Golf 6 is renowned for its quality, style, and driving experience.",
+       "The VW Golf 6 (2008-2012) is Volkswagen's stylish sixth-generation model. With a modern design, versatile options, and a range of engines, it offers a comfortable interior and a renowned driving experience.",
    },
    {
      id: 2,
@@ -19,7 +19,7 @@ import toyota from "../../image/cars-big/toyotacamry.jpg";
      name: "Audi A1 S-Line",
      image: audi,
      description:
-       "The Audi A1 S-Line is a sporty and stylish variant of the Audi A1, a compact luxury car. With its S-Line designation, it features enhanced sporty elements and design cues. The Audi A1 S-Line showcases a more aggressive and dynamic exterior appearance with unique front and rear bumpers, sporty alloy wheels, and S-Line badging. Inside, it offers a sport-inspired interior with sport seats, S-Line branding, and a sporty steering wheel. The Audi A1 S-Line combines style, performance, and luxury, making it an attractive choice for those seeking a sporty compact car experience.",
+       "The Audi A1 S-Line is a sporty variant of the compact luxury car, featuring enhanced design cues. With a dynamic exterior, sport-inspired interior, and a combination of style, performance, and luxury, it's an attractive choice for those seeking a sporty compact car experience.",
    },
    {
      id: 3,
@@ -35,7 +35,7 @@ import toyota from "../../image/cars-big/toyotacamry.jpg";
      name: "BMW 320 ModernLine",
      image: bmw,
      description:
-       "The BMW 320 ModernLine is a luxury variant of the BMW 3 Series, featuring sophisticated design elements and modern features. With its sleek exterior, high-quality materials, and advanced technology, it provides a premium driving experience that combines style and performance. The ModernLine trim adds unique touches to both the interior and exterior, enhancing its overall appeal.",
+       "The BMW 320 ModernLine is a luxury variant of the 3 Series, offering sophisticated design and modern features. With a sleek exterior, premium materials, and advanced technology, it delivers a stylish and high-performance driving experience. The ModernLine trim adds unique touches, enhancing its overall appeal.",
    },
    {
      id: 5,
@@ -43,14 +43,14 @@ import toyota from "../../image/cars-big/toyotacamry.jpg";
      name: "Mercedes-Benz GLK",
      image: benz,
      description:
-       "The Mercedes-Benz GLK is a compact luxury SUV renowned for its blend of style, comfort, and versatility. With its distinctive and muscular design, the GLK stands out on the road. The interior offers a premium and well-crafted cabin with high-quality materials and advanced features. The GLK provides a comfortable and refined driving experience, making it a popular choice for those seeking a luxurious compact SUV with a touch of elegance.",
+       "The Mercedes-Benz GLK is a stylish and versatile compact luxury SUV. With its distinctive design and premium interior, it offers comfort and advanced features. The GLK delivers a refined and comfortable driving experience, making it a popular choice for those seeking a touch of elegance in a compact SUV.",
    },
    {
      id: 6,
      name: "VW Passat CC",
      image: passatcc,
      description:
-       "The VW Passat CC, or Volkswagen Passat Comfort Coupe, is a stylish and sleek four-door coupe version of the Volkswagen Passat sedan. It offers a unique and sporty design with a lower roofline and sleeker profile. The Passat CC provides a comfortable and refined driving experience with luxurious features and advanced technology. With its combination of elegance, performance, and practicality, the VW Passat CC is an attractive choice for those seeking a distinctive and upscale sedan.",
+       "The VW Passat CC is a sleek four-door coupe with a sporty design and luxurious features. It offers a comfortable and refined driving experience, combining elegance, performance, and practicality for those seeking a distinctive and upscale sedan.",
    },
  ];
 

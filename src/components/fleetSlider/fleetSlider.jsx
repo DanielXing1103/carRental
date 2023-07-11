@@ -5,14 +5,15 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 const FleetSlide = () => {
   const [index, setIndex] = useState(0);
   const [fleets, setFleets] = useState(Data);
-  useEffect(()=>{
-    if(index<0){
-      setIndex(fleets.length-1);
+  let half = fleets.length / 2 - 1;
+  useEffect(() => {
+    if (index < 0) {
+      setIndex(fleets.length - 1);
     }
-    if(index == fleets.length){
+    if (index == fleets.length) {
       setIndex(0);
     }
-  })
+  });
 
   return (
     <div className="white-container">
@@ -22,16 +23,32 @@ const FleetSlide = () => {
       <div className="slider-content">
         <div className="slides">
           {fleets.map((fleet, fleetIndex) => {
-            console.log(fleetIndex);
-            console.log(index);
             const { name, image, description, id } = fleet;
-            let position = "activeSlide";
-            if (fleetIndex < index) {
-              position = "prevSlide";
-            } else if (fleetIndex > index) {
-              position = "nextSlide";
+            let position;
+            let opposite = 0;
+            if (index < half) {
+              opposite = index+half;
+              if (fleetIndex < opposite && fleetIndex > index) {
+                position = "nextSlide";
+              } else {
+                position = "prevSlide";
+              }
+            } else{
+              opposite = index - half;
+              if (fleetIndex > opposite && fleetIndex < index) {
+                position = "prevSlide";
+              }
+              else{
+                position = "nextSlide"
+              }
             }
-            console.log(position);
+            if(fleetIndex==index){
+              position="activeSlide"
+            }
+            console.log("start")
+            console.log(index)
+            console.log(fleetIndex)
+            console.log(position)
             return (
               <article className={position} key={id}>
                 <img src={image} alt="fleet" className="fleet-image" />
@@ -57,7 +74,7 @@ const FleetSlide = () => {
             <FiChevronRight />
           </div>
         </div>
-        <button className="colored-button">All Cars</button>
+        <a className="colored-button">All Cars</a>
       </div>
     </div>
   );
