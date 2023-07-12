@@ -41,8 +41,7 @@ const Submitted = () => {
               using the contact details provided.
             </p>
             <p>
-              For any urgent inquiries, please contact our support team at
-              [Insert Support Contact Information].
+              For any urgent inquiries, please contact our support team at (123) - 456 - 7890.
             </p>
             <p>
               Once again, thank you for choosing our services. We look forward

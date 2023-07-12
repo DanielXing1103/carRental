@@ -153,7 +153,7 @@
   margin-bottom: 4rem;
   font-weight: lighter;
 }
-
+.slides a,
 .reserve-buttons a {
   text-decoration: none;
   color: white;
@@ -161,7 +161,7 @@
   border-radius: 8px;
   margin-right: 17px;
   border: 2.5px solid transparent; /* Add transparent border to reserve space */
-
+  font-weight: bold ;
   transition: 0.2s ease-in-out;
 }
 .learn-more-buttons {
@@ -205,12 +205,12 @@
 .topic-content p {
   color: rgb(153, 152, 152);
 }
+.fleet-title,
 .topic-content h1 {
   color: #2779a7;
 }
 .title {
   color: #2779a7;
-
   font-size: 50px;
   margin: 20px;
   font-weight: bold;
@@ -275,4 +275,8 @@
 .fleet-image {
   height: 200px;
   margin-bottom: 10px;
+}
+
+.fleet-description{
+  font-size: 17px;
 }

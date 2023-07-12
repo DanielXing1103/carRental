@@ -27,32 +27,31 @@ const FleetSlide = () => {
             let position;
             let opposite = 0;
             if (index < half) {
-              opposite = index+half;
+              opposite = index + half;
               if (fleetIndex < opposite && fleetIndex > index) {
                 position = "nextSlide";
               } else {
                 position = "prevSlide";
               }
-            } else{
+            } else {
               opposite = index - half;
               if (fleetIndex > opposite && fleetIndex < index) {
                 position = "prevSlide";
-              }
-              else{
-                position = "nextSlide"
+              } else {
+                position = "nextSlide";
               }
             }
-            if(fleetIndex==index){
-              position="activeSlide"
+            if (fleetIndex == index) {
+              position = "activeSlide";
             }
-            console.log("start")
-            console.log(index)
-            console.log(fleetIndex)
-            console.log(position)
+            console.log("start");
+            console.log(index);
+            console.log(fleetIndex);
+            console.log(position);
             return (
               <article className={position} key={id}>
                 <img src={image} alt="fleet" className="fleet-image" />
-                <p className="fleet-title">{name}</p>
+                <h1 className="fleet-title">{name}</h1>
                 <p className="fleet-description">{description}</p>
               </article>
             );
@@ -74,7 +73,7 @@ const FleetSlide = () => {
             <FiChevronRight />
           </div>
         </div>
-        <a className="colored-button">All Cars</a>
+        <a className="colored-button">View All Cars</a>
       </div>
     </div>
   );
