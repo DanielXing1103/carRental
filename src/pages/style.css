@@ -6,17 +6,7 @@ body {
 }
 .divider {
   width: 50vw;
-}
-
-.ads-title {
-  font-size: 4vw;
-    margin-bottom: 40px;
-font-weight: bold;
-}
-
-.ads-content {
-  margin-top: 0;
-  font-size: 2vw;
-  text-align: center;
-  width: 80vw;
+  height: 120px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

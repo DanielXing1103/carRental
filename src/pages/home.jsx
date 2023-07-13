@@ -6,6 +6,7 @@ import AdsText from "../components/memberAds/memberAdsText";
 import AdsNumber from "../components/memberAds/memberAdsNumber";
 import Divider from "../components/divider/divider1";
 import BlackBanner  from "../components/blackbanner/blackbanner";
+import Testimonials from "../components/testimonials/testimonials.jsx";
 import "./style.css";
 import "./home.css";
 
@@ -21,6 +22,8 @@ const Home = () => {
       <BlackBanner />
       <AdsText />
       <AdsNumber />
+      <Divider />
+      <Testimonials />
       <Divider />
     </div>
   );
