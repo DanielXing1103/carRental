@@ -300,6 +300,12 @@
   width: 100%;
 }
 
+.ads-title {
+  font-size: 4vw;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
 .ads-unit {
   display: flex;
   flex-direction: column;
@@ -309,12 +315,10 @@
 }
 
 .num-title {
-  font-size: 9rem;
+  font-size: 120px;
   font-weight: 700;
   color: #2779a7;
   margin: 10px;
-  margin-bottom: 40px;
-  font-weight: bold;
 }
 
 .num-description {
