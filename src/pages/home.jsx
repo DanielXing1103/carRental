@@ -7,6 +7,7 @@ import AdsNumber from "../components/memberAds/memberAdsNumber";
 import Divider from "../components/divider/divider1";
 import BlackBanner  from "../components/blackbanner/blackbanner";
 import Testimonials from "../components/testimonials/testimonials.jsx";
+import Accordion from "../components/accordion/accordion";
 import "./style.css";
 import "./home.css";
 
@@ -25,6 +26,7 @@ const Home = () => {
       <Divider />
       <Testimonials />
       <Divider />
+      <Accordion />
     </div>
   );
 };
