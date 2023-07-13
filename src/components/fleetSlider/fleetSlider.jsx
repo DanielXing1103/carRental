@@ -44,10 +44,7 @@ const FleetSlide = () => {
             if (fleetIndex == index) {
               position = "activeSlide";
             }
-            console.log("start");
-            console.log(index);
-            console.log(fleetIndex);
-            console.log(position);
+
             return (
               <article className={position} key={id}>
                 <img src={image} alt="fleet" className="fleet-image" />

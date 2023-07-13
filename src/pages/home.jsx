@@ -3,8 +3,9 @@ import Top from "../components/top/top";
 import ThreeTopic from "../components/threeTopic/threeTopic";
 import FleetSlide from "../components/fleetSlider/fleetSlider";
 import AdsText from "../components/memberAds/memberAdsText";
-
+import AdsNumber from "../components/memberAds/memberAdsNumber";
 import Divider from "../components/divider/divider1";
+import BlackBanner  from "../components/blackbanner/blackbanner";
 import "./style.css";
 import "./home.css";
 
@@ -17,8 +18,10 @@ const Home = () => {
       <ThreeTopic />
       <Divider />
       <FleetSlide />
-      <Divider />
+      <BlackBanner />
       <AdsText />
+      <AdsNumber />
+      <Divider />
     </div>
   );
 };
