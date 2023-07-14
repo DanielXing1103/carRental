@@ -13,23 +13,25 @@ const Testimonials = () => {
           satisfied customers for a remarkable car rental journey.
         </p>
       </div>
-      <div className="review-units">
-        {Data.map((people) => {
-          const { id, name, location, image, text } = people;
-          return (
-            <div className="review-unit" key={id}>
-              <img src={image} alt="image" className="review-image" />
-              <h3 className="review-name">{name}</h3>
-              <p className="review-location">{location}</p>
-              <p className="review-text">
-                <span>"</span>
-                {text}
-                <span>"</span>
-              </p>
-                <FaQuoteRight className="qoute"/>
-            </div>
-          );
-        })}
+      <div className="center-at-small">
+        <div className="review-units">
+          {Data.map((people) => {
+            const { id, name, location, image, text } = people;
+            return (
+              <div className="review-unit" key={id}>
+                <img src={image} alt="image" className="review-image" />
+                <h3 className="review-name">{name}</h3>
+                <p className="review-location">{location}</p>
+                <p className="review-text">
+                  <span>"</span>
+                  {text}
+                  <span>"</span>
+                </p>
+                <FaQuoteRight className="qoute" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

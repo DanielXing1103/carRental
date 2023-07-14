@@ -133,6 +133,15 @@
   .ads-unit {
     border: none;
   }
+  .review-units {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .center-at-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 /* top car page */
 .top-container {
@@ -379,13 +388,11 @@
 }
 .review-units {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 .review-unit {
   width: 40vw;
-  min-width: 500px;
   border-radius: 10px;
   border: 1px;
   background-color: rgb(255, 255, 255);
@@ -466,9 +473,8 @@
 }
 .info-btn {
   background: transparent;
-  border-color: transparent;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 35px;
+  height: 35px;
   font-weight: bold;
   background: transparent;
   display: flex;
@@ -478,12 +484,16 @@
   cursor: pointer;
   margin-left: 1rem;
   align-self: center;
-  min-width: 2rem;
+  border-style: solid;
 }
 .q-unit .info-btn {
+  border-color: black;
   color: black;
 }
 .q-unit-blue .info-btn {
+  box-shadow: none;
+
+  border-color: white;
   color: white;
 }
 .a-unit {
@@ -537,24 +547,23 @@
   margin: 5px 0;
   cursor: pointer;
 }
-.footer-url:hover{
-color: #1e6187;
+.footer-url:hover {
+  color: #1e6187;
 }
-.footer-text{
-  margin:10px 0;
+.footer-text {
+  margin: 10px 0;
 }
-.footer-sub{
+.footer-sub {
   height: 30px;
   border-radius: 5px;
   border-width: 0;
   background-color: rgb(237, 237, 237);
 }
-.footer-sub:focus{
+.footer-sub:focus {
   background-color: white;
-    
 }
 
-.footer-unit .colored-button{
+.footer-unit .colored-button {
   margin-top: 10px;
   margin-right: 0;
 }
