@@ -133,6 +133,7 @@
   .ads-unit {
     border: none;
   }
+
   .review-units {
     flex-direction: column;
     justify-content: center;
@@ -311,9 +312,10 @@
   width: 100%;
 }
 .ads-title {
-  font-size: 4vw;
+  font-size: 40px;
   margin-bottom: 40px;
   font-weight: bold;
+  text-align: center;
 }
 .ads-unit {
   display: flex;
@@ -321,6 +323,9 @@
   align-items: center;
   width: 33%;
   margin: 40px 0px;
+}
+.ads-car {
+  width: 70vw;
 }
 .num-title {
   font-size: 120px;
@@ -343,6 +348,9 @@
   text-align: center;
   width: 80vw;
 }
+.ads-car {
+  background: none;
+}
 
 /* black-banner */
 .black-banner {
@@ -354,10 +362,12 @@
   font-size: 3.8rem;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 .banner-text {
   font-size: 2rem;
   margin-bottom: 90px;
+  text-align: center;
 }
 .blue {
   color: #2779a7;
@@ -372,11 +382,13 @@
 .review-subtitle {
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
 }
 .review-title {
   font-size: 3.7rem;
   margin: 5px;
   font-weight: bold;
+  text-align: center;
 }
 .review-description {
   margin: 25px;
@@ -423,13 +435,14 @@
   color: #2779a7;
 }
 
-/* Q&A */
+/* Q and A */
 
 .accordion-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 0px 80px 0px;
+  position: relative;
 }
 .accordion-title {
   display: flex;
@@ -437,15 +450,32 @@
   align-items: center;
   text-align: center;
 }
+.accord-car1 {
+  position: absolute;
+  z-index: -1;
+  right: -300px;
+  top: -150px;
+  width: 30rem;
+}
+.accord-car2 {
+  position: absolute;
+  z-index: -1;
+  left: -300px;
+  top: 500px;
+  width: 25rem;
+}
 .q-a-container {
+  margin-top: 100px;
   width: 50vw;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 5px;
+  background-color: white;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px 80px 70px 80px;
+  padding: 40px 60px 70px 60px;
+  position: relative;
 }
 .q-a-unit {
   margin: 20px 0px;
@@ -481,6 +511,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  border: 2px;
   cursor: pointer;
   margin-left: 1rem;
   align-self: center;

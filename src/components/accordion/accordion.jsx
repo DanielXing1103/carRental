@@ -1,6 +1,8 @@
 import accordionData from "./accordionData";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import car from "../../image/car-background-1.webp";
+import car2 from "../../image/car-background-2.png";
 
 const Accordion = () => {
   return (
@@ -14,6 +16,9 @@ const Accordion = () => {
         </p>
       </div>
       <div className="q-a-container">
+        <img src={car} alt="car" className="accord-car1" />
+        <img src={car2} alt="car" className="accord-car2" />
+
         <h3>Frequently Asked Questions About carRental</h3>
         {accordionData.map((data) => {
           const { question, answer, key } = data;
