@@ -69,6 +69,7 @@
 }
 
 .colored-button {
+  border: none;
   text-decoration: none;
   color: white;
   padding: 13px;
@@ -300,13 +301,11 @@
   display: flex;
   width: 100%;
 }
-
 .ads-title {
   font-size: 4vw;
   margin-bottom: 40px;
   font-weight: bold;
 }
-
 .ads-unit {
   display: flex;
   flex-direction: column;
@@ -314,14 +313,12 @@
   width: 33%;
   margin: 40px 0px;
 }
-
 .num-title {
   font-size: 120px;
   font-weight: 700;
   color: #2779a7;
   margin: 10px;
 }
-
 .num-description {
   font-size: 1rem;
   font-weight: bold;
@@ -331,7 +328,6 @@
   padding: 20px 6vw;
   font-weight: bold;
 }
-
 .ads-content {
   margin-top: 0;
   font-size: 2vw;
@@ -381,7 +377,6 @@
   color: rgb(90, 90, 90);
   margin-bottom: 20px;
 }
-
 .review-units {
   display: flex;
   flex-direction: row;
@@ -409,7 +404,6 @@
   border: 2px solid rgb(224, 224, 224);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .review-name {
   margin-bottom: 0;
 }
@@ -436,7 +430,6 @@
   align-items: center;
   text-align: center;
 }
-
 .q-a-container {
   width: 50vw;
   border: 1px solid rgb(208, 208, 208);
@@ -447,12 +440,10 @@
   gap: 20px;
   padding: 40px 80px 70px 80px;
 }
-
 .q-a-unit {
   margin: 20px 0px;
   box-shadow: 0px 4px 20px 0 rgba(0, 0, 0, 0.1);
 }
-
 .q-unit-blue,
 .q-unit {
   display: flex;
@@ -473,7 +464,6 @@
   color: white;
   box-shadow: 0px 1px 10px 0 #2779a7;
 }
-
 .info-btn {
   background: transparent;
   border-color: transparent;
@@ -490,7 +480,6 @@
   align-self: center;
   min-width: 2rem;
 }
-
 .q-unit .info-btn {
   color: black;
 }
@@ -502,16 +491,70 @@
   padding: 30px 40px;
   transition: 0.3s ease-in-out;
 }
-
 .a-text {
   font-size: 0.97rem;
   color: gray;
 }
-
 .a-unit-hidden {
   height: 0px;
   margin: -10px;
   padding: 0px 40px;
   overflow: hidden;
   transition: 0.3s ease-in-out;
+}
+
+/* footer */
+
+.footer-container {
+  background-color: rgb(251, 248, 248);
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+}
+
+.footer-unit {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+}
+
+.footer-title {
+  font-weight: bolder;
+  font-size: larger;
+}
+.phone,
+.email {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 7px;
+}
+.footer-url {
+  text-decoration: none;
+  margin: 5px 0;
+  cursor: pointer;
+}
+.footer-url:hover{
+color: #1e6187;
+}
+.footer-text{
+  margin:10px 0;
+}
+.footer-sub{
+  height: 30px;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: rgb(237, 237, 237);
+}
+.footer-sub:focus{
+  background-color: white;
+    
+}
+
+.footer-unit .colored-button{
+  margin-top: 10px;
+  margin-right: 0;
 }

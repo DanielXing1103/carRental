@@ -1,4 +1,4 @@
-export const titles = [
+const titles = [
   {
     id: "1",
     name: "Home",
@@ -6,7 +6,6 @@ export const titles = [
   },
   {
     id: "2",
-
     name: "Rentals",
     url: "/",
   },
@@ -29,3 +28,5 @@ export const titles = [
     url: "/",
   },
 ];
+
+export default titles;

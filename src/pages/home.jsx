@@ -8,6 +8,7 @@ import Divider from "../components/divider/divider1";
 import BlackBanner  from "../components/blackbanner/blackbanner";
 import Testimonials from "../components/testimonials/testimonials.jsx";
 import Accordion from "../components/accordion/accordion";
+import Footer from "../components/footer/footer";
 import "./style.css";
 import "./home.css";
 
@@ -27,6 +28,7 @@ const Home = () => {
       <Testimonials />
       <Divider />
       <Accordion />
+      <Footer/>
     </div>
   );
 };

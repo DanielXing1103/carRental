@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../../image/png/logo-no-background.png";
-import { titles } from "./data.jsx";
+import  titles  from "./data.jsx";
 
 const Navbar = () => {
   const [bar, setBars] = useState(false);
