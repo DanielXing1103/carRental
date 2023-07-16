@@ -1,5 +1,5 @@
 import Navbar from "../components/nav_bar/navbar";
-import Top from "../components/top/top";
+import Top from "../components/homeTop/top";
 import ThreeTopic from "../components/threeTopic/threeTopic";
 import FleetSlide from "../components/fleetSlider/fleetSlider";
 import AdsText from "../components/memberAds/memberAdsText";
@@ -10,7 +10,6 @@ import Testimonials from "../components/testimonials/testimonials.jsx";
 import Accordion from "../components/accordion/accordion";
 import Footer from "../components/footer/footer";
 import "./style.css";
-import "./home.css";
 
 const Home = () => {
   return (

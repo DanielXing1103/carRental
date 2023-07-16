@@ -7,25 +7,25 @@ const titles = [
   {
     id: "2",
     name: "Rentals",
-    url: "/",
+    url: "/rentals",
   },
   {
     id: "3",
 
     name: "About",
-    url: "/",
+    url: "/about",
   },
   {
     id: "4",
 
     name: "Testimonials",
-    url: "/",
+    url: "/testimonials",
   },
   {
     id: "5",
 
     name: "Contact",
-    url: "/",
+    url: "/contact",
   },
 ];
 
