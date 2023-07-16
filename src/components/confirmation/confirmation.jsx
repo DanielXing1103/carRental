@@ -1,15 +1,15 @@
-import { useEffect } from "react";
 import "../date/date.css";
-import Submitted from "./submitted.jsx";
+import { useNavigate } from "react-router-dom";
+
 const Confirmation = (props) => {
+    const navigate = useNavigate();
+
   //check for local storage
   const localDates = localStorage.getItem("dates");
   const localCar = localStorage.getItem("car");
   const localContacts = localStorage.getItem("contacts");
   //if some not valid do not run code
-  if (props.display == 5) {
-    return <Submitted />;
-  } else if (!localDates || !localCar || !localContacts) {
+  if (!localDates || !localCar || !localContacts) {
     return;
   }
   //retrieve data from local storage
@@ -30,10 +30,8 @@ const Confirmation = (props) => {
     zipCode,
   } = JSON.parse(localStorage.getItem("contacts"));
   const handleSubmit = () => {
-    localStorage.removeItem("dates");
-    localStorage.removeItem("car");
-    localStorage.removeItem("contacts");
-    props.setDisplay(5);
+    localStorage.setItem("end", true); //set end to true and jump to Confirmation Page
+    navigate("/confirmation")
   };
 
   return (

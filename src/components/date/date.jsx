@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import Bookcars from "../cars/bookcars.jsx";
+import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-time-picker/dist/TimePicker.css";
 import "./date.css";
 
 function Booking() {
-  const [input, setInput] = useState(true);//for error message when not all input are filled
+  const navigate = useNavigate();
+
+  const [input, setInput] = useState(true); //for error message when not all input are filled
   const [display, setDisplay] = useState(1); //controls page display
 
   // get all possible data
@@ -13,10 +16,11 @@ function Booking() {
   const localCar = localStorage.getItem("car");
   const localContacts = localStorage.getItem("contacts");
   const isEnd = localStorage.getItem("end");
-  
-  useEffect(() => {
 
-     if (localDates && localCar && localContacts) {
+  useEffect(() => {
+    if (isEnd) {
+      navigate("/confirmation");
+    } else if (localDates && localCar && localContacts) {
       setDisplay(4); //jump to confirmation if all data is filled and when it is not end page
     }
   });
@@ -54,7 +58,7 @@ function Booking() {
       <div className="pad"></div>
       <div className="container">
         {/* pass display and setDisplay along the book page */}
-        <Bookcars display={display} setDisplay={setDisplay} /> 
+        <Bookcars display={display} setDisplay={setDisplay} />
         <div className={display == 1 ? "date-content" : "hide"}>
           <div className="text">Choose Date</div>
           <h1 className={input ? "alert off" : "alert"}>All fields required</h1>

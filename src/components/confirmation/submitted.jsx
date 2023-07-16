@@ -1,20 +1,31 @@
 import "../date/date.css";
+import { useNavigate } from "react-router-dom";
 import check from "../../image/png/Eo_circle_light-green_checkmark.svg.png";
 import RequestIdGenerator from "../requestId/requestID";
 
 const Submitted = () => {
+  const navigate = useNavigate();
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
   });
-  
+  const handleSubmit = () => {
+    //remove the items for now. modify if added backend
+    localStorage.removeItem("dates");
+    localStorage.removeItem("car");
+    localStorage.removeItem("contacts");
+    localStorage.removeItem("requestId");
+
+    localStorage.removeItem("end");
+    navigate("/book")
+  };
+
   return (
     <div className="container">
       <div className="submitted-content">
         <div className="text">Confirmation</div>
-
         <div className="center">
           <img src={check} alt="check mark" className="check-mark" />
           <div>
@@ -41,13 +52,24 @@ const Submitted = () => {
               using the contact details provided.
             </p>
             <p>
-              For any urgent inquiries, please contact our support team at (123) - 456 - 7890.
+              For any urgent inquiries, please contact our support team at (123)
+              - 456 - 7890.
             </p>
             <p>
               Once again, thank you for choosing our services. We look forward
               to assisting you further.
             </p>
           </div>{" "}
+        </div>
+        <div className="center">
+          <button
+            className="colored-button"
+            onClick={() => {
+              handleSubmit();
+            }}
+          >
+            Book Another Car
+          </button>
         </div>
       </div>
     </div>

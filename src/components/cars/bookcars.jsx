@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import "../date/date.css";
 import { CAR_DATA } from "./car-data";
 import Contact from "../contact/contact";
+import { useNavigate } from "react-router-dom";
+import "../date/date.css";
+
 const bookCar = (props) => {
+  const navigate = useNavigate();//for go to booking page
   useEffect(() => {
     //update book page to car page if display is 2.
     if (props.display == 2) {
       props.setDisplay(2);
     }
-    console.log(props.display)
   }, [props.display]);
 
   const handleSubmit = (car) => {
@@ -17,6 +19,7 @@ const bookCar = (props) => {
     //display contact page
     props.setDisplay(3);
   };
+
   return (
     <div className="container">
       <Contact display={props.display} setDisplay={props.setDisplay} />
@@ -40,7 +43,11 @@ const bookCar = (props) => {
                   <button
                     className="colored-button"
                     onClick={() => {
-                      handleSubmit(car);
+                      props.rentalPage ? (
+                       navigate("/book") 
+                      ) : (
+                        handleSubmit(car)
+                      );
                     }}
                   >
                     Book Ride

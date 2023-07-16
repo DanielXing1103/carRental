@@ -9,7 +9,12 @@ class RequestIdGenerator extends React.Component {
   }
 
   componentDidMount() {
-    this.generateRequestId();
+    const storedRequestId = localStorage.getItem("requestId");
+    if (storedRequestId) {
+      this.setState({ requestId: storedRequestId });
+    } else {
+      this.generateRequestId();
+    }
   }
 
   generateRequestId = () => {
@@ -17,6 +22,7 @@ class RequestIdGenerator extends React.Component {
     const randomNum = Math.floor(Math.random() * 1000);
     const requestId = `${timestamp}-${randomNum}`;
     this.setState({ requestId });
+    localStorage.setItem("requestId", requestId);
   };
 
   render() {

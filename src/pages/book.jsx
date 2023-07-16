@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Navbar from "../components/nav_bar/navbar";
-
 import Date from "../components/date/date";
 import "./style.css";
 
