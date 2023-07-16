@@ -13,7 +13,7 @@ const Rentals = () => {
   return (
     <div className="page">
       <Navbar />
-      <SideTop />
+      <SideTop title={"Rentals"} path={"Home/Rentals"} />
       <div className="rental-page">
         <Bookcars display={display} setDisplay={setDisplay} rentalPage={true} />
       </div>
