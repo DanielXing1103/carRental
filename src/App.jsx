@@ -4,6 +4,7 @@ import Book from "./pages/book.jsx";
 import Rentals from "./pages/rentals";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import About from "./pages/about";
+import TestimonialsPage from "./pages/testimonials";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Rentals" element={<Rentals />}></Route>
         <Route path="/confirmation" element={<ConfirmationPage />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/testimonials" element={<TestimonialsPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
