@@ -70,7 +70,7 @@ const FleetSlide = () => {
             <FiChevronRight />
           </div>
         </div>
-        <a className="colored-button">View All Cars</a>
+        <a className="colored-button" href="/rentals">View All Cars</a>
       </div>
     </div>
   );

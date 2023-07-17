@@ -1,8 +1,8 @@
 import accordionData from "./accordionData";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import car from "../../image/car-background-1.webp";
-import car2 from "../../image/car-background-2.png";
+import car from "../../image/car-background/car-background-1.webp";
+import car2 from "../../image/car-background/car-background-2.png";
 
 const Accordion = () => {
   return (

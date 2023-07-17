@@ -1,4 +1,4 @@
-import car from "../../image/car-background-3.webp"
+import car from "../../image/car-background/car-background-3.webp";
 const AdsText = () => {
   return (
     <div className="center">

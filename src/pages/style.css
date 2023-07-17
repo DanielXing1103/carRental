@@ -160,7 +160,7 @@ body {
 /* top car page */
 .top-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../image/Car-Hero.webp);
+    url(../image/top-background/Car-Hero.webp);
   padding: 90px;
   margin: -10px -10px;
   background-size: cover;
@@ -169,16 +169,16 @@ body {
   padding: 130px 60px;
   margin: -10px -10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-    url(../image/lucid.jpg);
+    url(../image/top-background/lucid.jpg);
   background-size: cover;
 }
-.sideTop-text{
+.sideTop-text {
   color: white;
 }
-.sideTop-text h1{
+.sideTop-text h1 {
   font-size: 2.5rem;
 }
-.sideTop-text p{
+.sideTop-text p {
   font-size: 1.1rem;
 }
 .text {
@@ -628,6 +628,84 @@ body {
   margin-top: 10px;
   margin-right: 0;
 }
-.rental-page{
+.rental-page {
   margin-top: 20px;
 }
+
+.welcome-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-details {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sales {
+  width: 500px;
+  border-radius: 5px;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 400px;
+}
+
+.about-subtitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+.about-title {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+.about-details {
+  color: rgb(67, 66, 66);
+  line-height: 2;
+}
+.ourPeople-container {
+  margin: 50px 150px;
+}
+.people-subtitle {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.people-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+.people-description {
+  max-width: 700px;
+  margin-bottom: 100px;
+  color: rgb(69, 68, 68);
+}
+.team-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.team-unit{
+  margin: 20px;
+}
+.team-unit img {
+  width: 300px;
+  height: 300px;
+}
+.team-unit .name{
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.team-unit .job{
+  color: rgb(72, 72, 72);
+}
+
