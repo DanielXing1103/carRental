@@ -2,6 +2,7 @@ import "../date/date.css";
 import { useNavigate } from "react-router-dom";
 import check from "../../image/png/Eo_circle_light-green_checkmark.svg.png";
 import RequestIdGenerator from "../requestId/requestID";
+import { useEffect } from "react";
 
 const Submitted = () => {
   const navigate = useNavigate();
@@ -16,10 +17,9 @@ const Submitted = () => {
     localStorage.removeItem("dates");
     localStorage.removeItem("car");
     localStorage.removeItem("contacts");
-    localStorage.removeItem("requestId");
 
     localStorage.removeItem("end");
-    navigate("/book")
+    navigate("/book");
   };
 
   return (

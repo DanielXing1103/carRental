@@ -2,7 +2,7 @@ import "../date/date.css";
 import { useNavigate } from "react-router-dom";
 
 const Confirmation = (props) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //check for local storage
   const localDates = localStorage.getItem("dates");
@@ -31,7 +31,9 @@ const Confirmation = (props) => {
   } = JSON.parse(localStorage.getItem("contacts"));
   const handleSubmit = () => {
     localStorage.setItem("end", true); //set end to true and jump to Confirmation Page
-    navigate("/confirmation")
+    localStorage.removeItem("requestId");
+
+    navigate("/confirmation");
   };
 
   return (

@@ -3,13 +3,15 @@ import PeopleData from "./peopleData";
 const OurPeople = () => {
   return (
     <div className="ourPeople-container">
-      <p className="people-subtitle">The team</p>
-      <p className="people-title">Meet our team of experts</p>
-      <p className="people-description">
-        With a customer-centric approach, we work tirelessly to understand and
-        meet the unique needs of our clients, ensuring excellence in everything
-        we do.
-      </p>
+      <div className="text-container">
+        <p className="people-subtitle">The team</p>
+        <p className="people-title">Meet our team of experts</p>
+        <p className="people-description">
+          With a customer-centric approach, we work tirelessly to understand and
+          meet the unique needs of our clients, ensuring excellence in
+          everything we do.
+        </p>
+      </div>
       <div className="center">
         <div className="team-container">
           {PeopleData.map((person) => {

@@ -672,7 +672,10 @@ body {
   line-height: 2;
 }
 .ourPeople-container {
-  margin: 50px 150px;
+  margin: 50px 100px;
+}
+.text-container{
+  margin:0px 40px
 }
 .people-subtitle {
   font-size: 0.9rem;
@@ -693,19 +696,21 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
-.team-unit{
-  margin: 20px;
+.team-unit {
+  margin: 20px 5px;
+  padding: 20px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .team-unit img {
   width: 300px;
   height: 300px;
 }
-.team-unit .name{
+.team-unit .name {
   font-weight: bold;
   font-size: 1.3rem;
 }
-.team-unit .job{
+.team-unit .job {
   color: rgb(72, 72, 72);
 }
-
