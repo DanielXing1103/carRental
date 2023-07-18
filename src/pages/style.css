@@ -539,14 +539,13 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 2px;
+  border: 2.1px solid;
   cursor: pointer;
   margin-left: 1rem;
   align-self: center;
-  border-style: solid;
 }
 .q-unit .info-btn {
-  border-color: black;
+  border-color: rgb(154, 154, 154);
   color: black;
 }
 .q-unit-blue .info-btn {

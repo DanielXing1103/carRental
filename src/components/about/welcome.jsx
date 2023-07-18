@@ -28,7 +28,7 @@ const Welcome = () => {
         <div className="about-container">
           <p className="about-subtitle">Membership</p>
           <p className="about-title">
-            <span className="blue">Lazuli</span> Plus Rewards®
+            <span className="blue">Lazuli Plus</span> Rewards®
           </p>
           <p className="about-details">
             Lazuli Plus is the epitome of luxury and adventure in the world of

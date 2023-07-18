@@ -72,6 +72,7 @@ const Submitted = () => {
           </button>
         </div>
       </div>
+      <div className="pad"></div>
     </div>
   );
 };

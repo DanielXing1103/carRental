@@ -5,6 +5,7 @@ import Rentals from "./pages/rentals";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import About from "./pages/about";
 import TestimonialsPage from "./pages/testimonials";
+import Contact from "./pages/contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/confirmation" element={<ConfirmationPage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/testimonials" element={<TestimonialsPage />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </BrowserRouter>
   );

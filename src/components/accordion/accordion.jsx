@@ -32,7 +32,7 @@ const Accordion = () => {
                   onClick={() => {
                     setDisplay(!display);
                   }}
-                >
+                > 
                   {display ? <AiOutlineMinus /> : <AiOutlinePlus />}
                 </button>
               </div>

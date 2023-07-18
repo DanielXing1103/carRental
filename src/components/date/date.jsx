@@ -91,6 +91,7 @@ function Booking() {
           </form>
         </div>
       </div>
+      <div className="pad"></div>
     </div>
   );
 }

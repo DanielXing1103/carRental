@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CAR_DATA } from "./car-data";
-import Contact from "../contact/contact";
+import Contact from "../contact/bookContact";
 import { useNavigate } from "react-router-dom";
 import "../date/date.css";
 
