@@ -1,6 +1,7 @@
 .pad {
   padding-top: 85px;
 }
+.contact-info,
 .container {
   display: flex;
   flex-direction: column;
@@ -13,31 +14,38 @@
 .confirmation-content,
 .submitted-content {
   width: 75vw;
+  min-width: 300px;
   padding: 30px 30px;
-  border-radius: 5px;
   background-color: white;
 }
+.contact-info {
+  margin: 40px 0px;
+  width: 45vw;
+  border-radius: 10px;
+  min-width: 400px;
+  padding:30px 20px;
+  box-shadow: 0px 2px 8px rgba(244, 38, 62, 0.04),
+    0px 1px 3px rgba(31, 37, 89, 0.07);
+  background-color: white;
+}
+
 .container .text {
   font-size: 1.8em;
   color: black;
   font-weight: bold;
   margin-bottom: 15px;
 }
+.contact-info .from,
 .container .form {
   border: 1px solid var(--grey);
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container span {
-  margin-top: 20px;
-  font-size: 17px;
-}
+.contact-info .form input,
 .container .form input {
-  width: 30vw;
-  min-width: 300px;
   height: 55px;
   margin: 10px 0;
   padding: 20px 40px;
@@ -47,6 +55,20 @@
   border-radius: 10px;
   box-shadow: 0px 2px 8px rgba(244, 38, 62, 0.04),
     0px 1px 3px rgba(31, 37, 89, 0.07);
+}
+.container .form input {
+  width: 42vw;
+  min-width: 300px;
+}
+.contact-info .form input {
+  width: 20vw;
+  min-width: 200px;
+}
+.contact-info .info-form__2col input {
+  width: 20vw;
+}
+.contact-info .info-form__1col input {
+  width: 42vw;
 }
 .container .info-form__2col input {
   width: 30vw;
@@ -60,13 +82,15 @@
 }
 .info-form__2col {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0 2vw;
 }
 .form span {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  font-size: 17px;
 }
 .container .colored-button {
   border: none;
@@ -131,8 +155,10 @@
 .car-image {
   height: 100%;
   width: 280px;
-    border-radius: 5px;
+  border-radius: 5px;
+  border-radius: 5px;
 
+  border-radius: 5px;
 }
 
 b {
@@ -166,9 +192,16 @@ b {
 }
 
 @media screen and (max-width: 950px) {
-  .container .info-form__2col input {
-    width: 62vw;
+  .contact-info .form input,
+  .container .form input {
+    width: 46vw;
+    min-width: 300px;
   }
+  .contact-info {
+    width: 70vw;
+    min-width: 300px;
+  }
+  .contact-info .info-form__2col,
   .container .info-form__2col {
     display: flex;
     flex-direction: column;

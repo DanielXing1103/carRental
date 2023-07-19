@@ -76,8 +76,8 @@ body {
 
 /* buttons */
 .nav-buttons {
-  margin-right: 10px;
-  margin-left: 10px;
+  padding: 0 10px;
+  margin: 0 10pxy;
   justify-content: space-between;
 }
 
@@ -90,7 +90,6 @@ body {
 
   border-radius: 8px;
   box-shadow: 2px 3px 7px #1e6187;
-  margin-right: 7px;
 }
 
 .colored-button:hover {
@@ -572,14 +571,18 @@ body {
 }
 
 /* footer */
-
 .footer-container {
   background-color: rgb(251, 248, 248);
-  padding: 30px;
+  margin: -10px;
+  padding: 40px;
+  padding-bottom: 20px;
+}
+.footer-info {
+    padding-bottom: 70px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-bottom: 100px;
 }
 
 .footer-unit {
@@ -597,7 +600,7 @@ body {
 .email {
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   gap: 7px;
 }
 .footer-url {
@@ -623,6 +626,7 @@ body {
   background-color: white;
 }
 
+.contact-info .colored-button,
 .footer-unit .colored-button {
   margin-top: 10px;
   margin-right: 0;
@@ -673,8 +677,8 @@ body {
 .ourPeople-container {
   margin: 50px 100px;
 }
-.text-container{
-  margin:0px 40px
+.text-container {
+  margin: 0px 40px;
 }
 .people-subtitle {
   font-size: 0.9rem;
@@ -690,12 +694,17 @@ body {
   margin-bottom: 100px;
   color: rgb(69, 68, 68);
 }
+.contactPage-container,
 .team-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-
+}
+.contactPage-container {
+  margin: 10px -10px;
+  padding: 100px 20px;
+  background-color: rgba(237, 236, 236, 0.951);
 }
 .team-unit {
   margin: 20px 5px;
@@ -712,4 +721,34 @@ body {
 }
 .team-unit .job {
   color: rgb(72, 72, 72);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 15px;
+}
+.contact-title {
+  font-size: 45px;
+}
+.icon-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact-detail .icon {
+  width: 70px;
+  height: 50px;
+  font-size: 50px;
+  color: #1e6187;
+}
+
+.container .form {
+  border: 1px solid var(--grey);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
