@@ -27,6 +27,11 @@ const titles = [
     name: "Contact",
     url: "/contact",
   },
+  {
+    id:"6",
+    name:"Book Now",
+    url:"/book",
+  }
 ];
 
 export default titles;

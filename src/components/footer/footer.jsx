@@ -57,7 +57,7 @@ const Footer = () => {
         <p className="copyright">
           Copyright 2023 © carRental | All Rights Reserved
         </p>
-      </div>{" "}
+      </div>
     </div>
   );
 };

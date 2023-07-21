@@ -1,9 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { googleProvider, auth } from "../../config/firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
 import logo from "../../image/png/logo-no-background.png";
-import  titles  from "./data.jsx";
+import titles from "./data.jsx";
 
 const Navbar = () => {
+  const [login, setLogin] = useState("login");
   const [bar, setBars] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state for login status
+  const navigate = useNavigate();
+  const user = auth.currentUser;
+
+  const singInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  auth.onAuthStateChanged((user) => {
+    user ? setLogin("logout") : setLogin("login");
+  });
+
   return (
     <nav className="navbar">
       <a href="/">
@@ -21,8 +48,11 @@ const Navbar = () => {
         })}
 
         <div className="nav-buttons">
-          <a href="/book" className="colored-button">
-            Book Now
+          <a
+            onClick={user ? logout : singInWithGoogle}
+            className="colored-button"
+          >
+            {login}
           </a>
         </div>
       </ul>
