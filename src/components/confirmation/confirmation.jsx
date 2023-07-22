@@ -1,13 +1,17 @@
 import "../date/date.css";
+import { db } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import RequestIdGenerator from "../requestId/requestID";
 
 const Confirmation = (props) => {
   const navigate = useNavigate();
+  const bookCollectionRef = collection(db, "booking");
 
   //check for local storage
-  const localDates = localStorage.getItem("dates");
-  const localCar = localStorage.getItem("car");
-  const localContacts = localStorage.getItem("contacts");
+  const localDates = JSON.parse(localStorage.getItem("dates"));
+  const localCar = JSON.parse(localStorage.getItem("car"));
+  const localContacts = JSON.parse(localStorage.getItem("contacts"));
   //if some not valid do not run code
   if (!localDates || !localCar || !localContacts) {
     return;
@@ -29,11 +33,23 @@ const Confirmation = (props) => {
     state,
     zipCode,
   } = JSON.parse(localStorage.getItem("contacts"));
-  const handleSubmit = () => {
-    localStorage.setItem("end", true); //set end to true and jump to Confirmation Page
-    localStorage.removeItem("requestId");
 
-    navigate("/confirmation");
+  const handleSubmit = async () => {
+    try {
+      // await generateRequestIdAsync();
+      const requestId = localStorage.getItem("requestId");
+      // console.log(requestId);
+      await addDoc(bookCollectionRef, {
+        dates: localDates,
+        car: localCar,
+        contacts: localContacts,
+        requestId: requestId,
+      });
+
+      localStorage.setItem("end", true); //set end to true and jump to Confirmation Page
+
+      navigate("/confirmation");
+    } catch (error) {}
   };
 
   return (
@@ -154,6 +170,7 @@ const Confirmation = (props) => {
           </div>
         </div>
         <div className="center">
+          {<RequestIdGenerator />}
           <button
             className="colored-button"
             onClick={() => {

@@ -6,6 +6,7 @@ import ConfirmationPage from "./pages/ConfirmationPage";
 import About from "./pages/about";
 import TestimonialsPage from "./pages/testimonials";
 import Contact from "./pages/contact";
+import PrivateRoute from "./config/privateRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

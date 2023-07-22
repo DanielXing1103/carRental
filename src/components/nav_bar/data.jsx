@@ -29,7 +29,7 @@ const titles = [
   },
   {
     id:"6",
-    name:"Book Now",
+    name:"Book",
     url:"/book",
   }
 ];

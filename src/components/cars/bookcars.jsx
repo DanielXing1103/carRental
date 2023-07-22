@@ -18,7 +18,7 @@ const bookCar = (props) => {
     localStorage.setItem("car", JSON.stringify(car));
     //display contact page
     props.setDisplay(3);
-  };
+  }; 
 
   return (
     <div className="container">

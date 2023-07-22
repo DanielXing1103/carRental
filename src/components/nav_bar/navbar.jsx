@@ -1,20 +1,17 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { googleProvider, auth } from "../../config/firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithRedirect, signOut } from "firebase/auth";
 import logo from "../../image/png/logo-no-background.png";
 import titles from "./data.jsx";
 
 const Navbar = () => {
-  const [login, setLogin] = useState("login");
-  const [bar, setBars] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state for login status
-  const navigate = useNavigate();
   const user = auth.currentUser;
+  const [login, setLogin] = useState(true);
+  const [bar, setBars] = useState(false);
 
   const singInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithRedirect(auth, googleProvider);
     } catch (err) {
       console.error(err);
     }
@@ -28,7 +25,8 @@ const Navbar = () => {
   };
 
   auth.onAuthStateChanged((user) => {
-    user ? setLogin("logout") : setLogin("login");
+    // user ? setLogin("logout") : setLogin("login");
+    setLogin(user!==null);
   });
 
   return (
@@ -52,7 +50,7 @@ const Navbar = () => {
             onClick={user ? logout : singInWithGoogle}
             className="colored-button"
           >
-            {login}
+            {login ? "logout" : "login"}
           </a>
         </div>
       </ul>

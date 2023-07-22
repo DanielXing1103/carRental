@@ -12,7 +12,7 @@ const BookContact = (props) => {
     }
   }, [props.display]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {     
     e.preventDefault();
     //get data
     const inputNames = [
@@ -53,7 +53,7 @@ const BookContact = (props) => {
         <h1 className={input ? "alert off" : "alert"}>All fields required</h1>
         <form onSubmit={handleSubmit} className="form">
           <div className="center">
-            <div class="info-form__2col">
+            <div className="info-form__2col">
               <span>
                 <label>
                   First Name <b>*</b>

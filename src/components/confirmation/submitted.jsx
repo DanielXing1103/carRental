@@ -12,12 +12,15 @@ const Submitted = () => {
     day: "numeric",
     year: "numeric",
   });
+  const requestId = localStorage.getItem("requestId");
   const handleSubmit = () => {
     //remove the items for now. modify if added backend
-    localStorage.removeItem("dates");
-    localStorage.removeItem("car");
-    localStorage.removeItem("contacts");
 
+    // localStorage.removeItem("dates");
+    // localStorage.removeItem("car");
+    // localStorage.removeItem("contacts");
+
+    localStorage.removeItem("requestId");
     localStorage.removeItem("end");
     navigate("/book");
   };
@@ -30,7 +33,7 @@ const Submitted = () => {
           <img src={check} alt="check mark" className="check-mark" />
           <div>
             <p>
-              <span class="checkmark">&#10004;</span> Request Submitted
+              <span className="checkmark">&#10004;</span> Request Submitted
               Successfully!
             </p>
             <p>
@@ -40,7 +43,7 @@ const Submitted = () => {
             <p>Please find below the details of your submission:</p>
             <ul>
               <li>
-                <strong>Request ID:</strong> {<RequestIdGenerator />}
+                <strong>Request ID:</strong>{requestId && <p>{requestId}</p>}
               </li>
               <li>
                 <strong>Date:</strong> {formattedDate}

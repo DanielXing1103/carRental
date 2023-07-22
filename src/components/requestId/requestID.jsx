@@ -26,9 +26,7 @@ class RequestIdGenerator extends React.Component {
   };
 
   render() {
-    const { requestId } = this.state;
 
-    return <div>{requestId && <p>{requestId}</p>}</div>;
   }
 }
 
