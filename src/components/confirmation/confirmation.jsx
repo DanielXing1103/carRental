@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import RequestIdGenerator from "../requestId/requestID";
 
-const Confirmation = (props) => {
+const Confirmation = (props) => { 
   const navigate = useNavigate();
   const bookCollectionRef = collection(db, "booking");
 
@@ -33,12 +33,10 @@ const Confirmation = (props) => {
     state,
     zipCode,
   } = JSON.parse(localStorage.getItem("contacts"));
+      const requestId = localStorage.getItem("requestId");
 
   const handleSubmit = async () => {
     try {
-      // await generateRequestIdAsync();
-      const requestId = localStorage.getItem("requestId");
-      // console.log(requestId);
       await addDoc(bookCollectionRef, {
         dates: localDates,
         car: localCar,

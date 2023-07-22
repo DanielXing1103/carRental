@@ -1,32 +1,37 @@
 import { useState } from "react";
-
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 import "../date/date.css"; //contact info css is here
 import { Navigate } from "react-router-dom";
 const Contact = () => {
   const [input, setInput] = useState(true); //for error message when not all input are filled
+  const messageCollectionRef = collection(db, "message");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     //collects data
     const inputNames = ["firstName", "lastName", "email", "message"];
-    const dates = {};
+    const message = {};
     let count = 0;
     for (let i = 0; i < inputNames.length; i++) {
       const inputElement = document.getElementById(inputNames[i]);
       inputElement.value ? count++ : count;
-      dates[inputNames[i]] = inputElement.value;
+      message[inputNames[i]] = inputElement.value;
     }
     //if all fields is filled
     if (count == inputNames.length) {
-      localStorage.setItem("message", JSON.stringify(dates)); //save data
+      try {
+        await addDoc(messageCollectionRef, {
+          message:message,
+        });
+      } catch (error) {}
       //hidden date tab and error message and display car page
       setInput(true);
-      alert("Your message has been send")
+      alert("Your message has been send");
     } else {
       //display error
       setInput(false);
-      
     }
   };
   return (

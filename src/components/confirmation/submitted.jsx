@@ -14,11 +14,9 @@ const Submitted = () => {
   });
   const requestId = localStorage.getItem("requestId");
   const handleSubmit = () => {
-    //remove the items for now. modify if added backend
-
-    // localStorage.removeItem("dates");
-    // localStorage.removeItem("car");
-    // localStorage.removeItem("contacts");
+    localStorage.removeItem("dates");
+    localStorage.removeItem("car");
+    localStorage.removeItem("contacts");
 
     localStorage.removeItem("requestId");
     localStorage.removeItem("end");
