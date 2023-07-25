@@ -3,10 +3,12 @@ import { googleProvider, auth } from "../../config/firebase";
 import { signInWithRedirect, signOut } from "firebase/auth";
 import logo from "../../image/png/logo-no-background.png";
 import titles from "./data.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const user = auth.currentUser;
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [bar, setBars] = useState(false);
 
   const singInWithGoogle = async () => {
@@ -26,7 +28,7 @@ const Navbar = () => {
 
   auth.onAuthStateChanged((user) => {
     // user ? setLogin("logout") : setLogin("login");
-    setLogin(user!==null);
+    setLogin(user !== null);
   });
 
   return (
@@ -47,7 +49,13 @@ const Navbar = () => {
 
         <div className="nav-buttons">
           <a
-            onClick={user ? logout : singInWithGoogle}
+            onClick={
+              user
+                ? logout
+                : () => {
+                    navigate("/login");
+                  }
+            }
             className="colored-button"
           >
             {login ? "logout" : "login"}

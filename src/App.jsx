@@ -6,6 +6,7 @@ import ConfirmationPage from "./pages/ConfirmationPage";
 import About from "./pages/about";
 import TestimonialsPage from "./pages/testimonials";
 import Contact from "./pages/contact";
+import LoginPage from "./pages/loginPage";
 import PrivateRoute from "./config/privateRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,7 +15,16 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/book" element={<Book />}></Route>
+        <Route
+          path="/book"
+          element={
+            <PrivateRoute>
+              <Book />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+
         <Route path="/Rentals" element={<Rentals />}></Route>
         <Route path="/confirmation" element={<ConfirmationPage />}></Route>
         <Route path="/about" element={<About />}></Route>

@@ -5,7 +5,7 @@ import { signInWithRedirect, signOut } from "firebase/auth";
 export default function PrivateRoute({ children }) {
   const user = auth.currentUser;
 
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
 
   const singInWithGoogle = async () => {
     try {
@@ -29,5 +29,5 @@ export default function PrivateRoute({ children }) {
     console.log(user)
   });
 
-  return login ? children :console.log("off");
+  return login ? children :<button onClick={singInWithGoogle}>login</button>;
 }
