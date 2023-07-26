@@ -61,7 +61,11 @@ function Booking() {
         <Bookcars display={display} setDisplay={setDisplay} />
         <div className={display == 1 ? "date-content" : "hide"}>
           <div className="text">Choose Date</div>
-          <h1 className={input ? "alert off" : "alert"}>All fields required</h1>
+          <div className="center">
+            <h1 className={input ? "alert off" : "alert"}>
+              All fields required
+            </h1>
+          </div>
           <form onSubmit={handleSubmit} className="form">
             <div className="form-element">
               <div className="input-data">
