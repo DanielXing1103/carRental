@@ -1,8 +1,6 @@
 import "../date/date.css";
 import { useNavigate } from "react-router-dom";
 import check from "../../image/png/Eo_circle_light-green_checkmark.svg.png";
-import RequestIdGenerator from "../requestId/requestID";
-import { useEffect } from "react";
 
 const Submitted = () => {
   const navigate = useNavigate();
@@ -14,8 +12,8 @@ const Submitted = () => {
   });
   const requestId = localStorage.getItem("requestId");
   const handleSubmit = () => {
-    localStorage.removeItem("dates");
-    localStorage.removeItem("car");
+    // localStorage.removeItem("dates");
+    // localStorage.removeItem("car");
     localStorage.removeItem("contacts");
 
     localStorage.removeItem("requestId");
@@ -41,7 +39,8 @@ const Submitted = () => {
             <p>Please find below the details of your submission:</p>
             <ul>
               <li>
-                <strong>Request ID:</strong>{requestId && <p>{requestId}</p>}
+                <strong>Request ID:</strong>
+                {requestId && <p>{requestId}</p>}
               </li>
               <li>
                 <strong>Date:</strong> {formattedDate}

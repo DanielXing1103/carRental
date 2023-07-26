@@ -1,6 +1,7 @@
 import "../date/date.css";
 import Confirmation from "../confirmation/confirmation";
 import { useState, useEffect } from "react";
+import RequestIdGenerator from "../requestId/requestID";
 
 const BookContact = (props) => {
   const [input, setInput] = useState(true); // for error message if not all input are filled
@@ -12,7 +13,7 @@ const BookContact = (props) => {
     }
   }, [props.display]);
 
-  const handleSubmit = (e) => {     
+  const handleSubmit = (e) => {
     e.preventDefault();
     //get data
     const inputNames = [
@@ -50,7 +51,9 @@ const BookContact = (props) => {
       <Confirmation display={props.display} setDisplay={props.setDisplay} />
       <div className={props.display == 3 ? "contact-content" : "hide"}>
         <div className="text">Contact</div>
-        <h1 className={input ? "alert off" : "alert"}>All fields required</h1>
+        <div className="center">
+          <h1 className={input ? "alert off" : "alert"}>All fields required</h1>
+        </div>
         <form onSubmit={handleSubmit} className="form">
           <div className="center">
             <div className="info-form__2col">
@@ -149,7 +152,7 @@ const BookContact = (props) => {
                 />
               </span>
             </div>
-
+            {<RequestIdGenerator />}
             <button type="submit" className="colored-button">
               Reserve Now
             </button>

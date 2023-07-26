@@ -2,12 +2,19 @@ import "../date/date.css";
 import { db } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
-import RequestIdGenerator from "../requestId/requestID";
+import { getAuth } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
-const Confirmation = (props) => { 
+const Confirmation = (props) => {
+  const user = auth.currentUser;
   const navigate = useNavigate();
   const bookCollectionRef = collection(db, "booking");
-
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
   //check for local storage
   const localDates = JSON.parse(localStorage.getItem("dates"));
   const localCar = JSON.parse(localStorage.getItem("car"));
@@ -17,12 +24,8 @@ const Confirmation = (props) => {
     return;
   }
   //retrieve data from local storage
-  const { dropoffDate, dropoffTime, pickupDate, pickupTime } = JSON.parse(
-    localStorage.getItem("dates")
-  );
-  const { name, price, model, mark, year, fuel } = JSON.parse(
-    localStorage.getItem("car")
-  );
+  const { dropoffDate, dropoffTime, pickupDate, pickupTime } = localDates;
+  const { name, price, model, mark, year, fuel } = localCar;
   const {
     firstName,
     lastName,
@@ -32,16 +35,19 @@ const Confirmation = (props) => {
     city,
     state,
     zipCode,
-  } = JSON.parse(localStorage.getItem("contacts"));
-      const requestId = localStorage.getItem("requestId");
+  } = localContacts;
+  const requestId = localStorage.getItem("requestId");
 
   const handleSubmit = async () => {
+    console.log(requestId)
     try {
       await addDoc(bookCollectionRef, {
         dates: localDates,
         car: localCar,
         contacts: localContacts,
         requestId: requestId,
+        bookDate: formattedDate,
+        email: user.email,
       });
 
       localStorage.setItem("end", true); //set end to true and jump to Confirmation Page
@@ -168,7 +174,6 @@ const Confirmation = (props) => {
           </div>
         </div>
         <div className="center">
-          {<RequestIdGenerator />}
           <button
             className="colored-button"
             onClick={() => {
