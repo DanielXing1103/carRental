@@ -578,7 +578,7 @@ body {
   padding-bottom: 20px;
 }
 .footer-info {
-    padding-bottom: 70px;
+  padding-bottom: 70px;
 
   display: flex;
   flex-direction: row;
@@ -608,10 +608,11 @@ body {
   margin: 5px 0;
   color: black;
   cursor: pointer;
-  transition: 0.1s ease-in-out;
 }
 .footer-url:hover {
-  color: rgb(108, 108, 240);
+  color: #2779a7;
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
 }
 .footer-text {
   margin: 10px 0;
@@ -751,4 +752,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontal centering */
+  justify-content: center; /* Vertical centering */
+  height: 100vh; /* Adjust the height to control the vertical centering area */
+}
+/* Assuming .loading-spinner has the following styles */
+.loading-spinner {
+  border: 8px solid rgba(0, 0, 0, 0.3);
+  border-top: 8px solid gray;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite; /* Apply the spin animation */
+}
+
+/* Define the keyframes for the spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start the spinner from 0 degrees rotation */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate the spinner by 360 degrees */
+  }
 }

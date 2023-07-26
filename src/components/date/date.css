@@ -188,6 +188,7 @@ b {
   display: inline-block;
   margin-left: 10px;
   font-size: 12px;
+  font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   color: #0a7dc4;

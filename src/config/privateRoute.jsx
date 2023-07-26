@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import LoadingPage from "../components/loading/loading";
 
 export default function PrivateRoute({ children }) {
   const navigate = useNavigate();
@@ -12,7 +13,6 @@ export default function PrivateRoute({ children }) {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setLogin(user !== null);
       setAuthChecked(true); // Mark authentication check as completed
-      console.log(user);
     });
 
     // Clean up the listener on component unmount
@@ -31,5 +31,5 @@ export default function PrivateRoute({ children }) {
   }
 
   // You might also consider rendering a loading state here, as auth state might not be determined yet.
-  return <p>Loading...</p>;
+  return <LoadingPage/>;
 }

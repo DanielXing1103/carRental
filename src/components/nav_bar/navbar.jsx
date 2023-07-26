@@ -1,12 +1,14 @@
-import { useState } from "react";
-import { googleProvider, auth } from "../../config/firebase";
-import { signInWithRedirect, signOut } from "firebase/auth";
+import { useState,useEffect } from "react";
+import { auth } from "../../config/firebase";
+import { signOut } from "firebase/auth";
 import logo from "../../image/png/logo-no-background.png";
 import titles from "./data.jsx";
+import Loading from "../loading/loading";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true); // Introduce the loading state
   const user = auth.currentUser;
   const [login, setLogin] = useState(false);
   const [bar, setBars] = useState(false);
@@ -19,10 +21,20 @@ const Navbar = () => {
     }
   };
 
-  auth.onAuthStateChanged((user) => {
-    // user ? setLogin("logout") : setLogin("login");
-    setLogin(user !== null);
-  });
+  useEffect(() => {
+    // Use useEffect to fetch the authentication state asynchronously
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLogin(user !== null);
+      setLoading(false); // Once the state is retrieved, set loading to false
+    });
+
+    return () => unsubscribe(); // Clean up the listener on component unmount
+  }, []);
+
+  if (loading) {
+    // Show the loading page while the authentication state is being fetched
+    return <Loading />;
+  }
 
   return (
     <nav className="navbar">

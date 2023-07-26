@@ -9,7 +9,7 @@ function Booking() {
   const navigate = useNavigate();
 
   const [input, setInput] = useState(true); //for error message when not all input are filled
-  const [display, setDisplay] = useState(3); //controls page display
+  const [display, setDisplay] = useState(1); //controls page display
 
   // get all possible data
   const localDates = localStorage.getItem("dates");
