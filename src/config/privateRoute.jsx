@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
-import { googleProvider, auth } from "./firebase";
-import { signInWithRedirect, signOut } from "firebase/auth";
+import { auth } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function PrivateRoute({ children }) {
-  const user = auth.currentUser;
-
+  const navigate = useNavigate();
   const [login, setLogin] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
 
-  const singInWithGoogle = async () => {
-    try {
-      await signInWithRedirect(auth, googleProvider);
-    } catch (err) {
-      console.error(err);
+  useEffect(() => {
+    // Setup the onAuthStateChanged listener and return the unsubscribe function
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLogin(user !== null);
+      setAuthChecked(true); // Mark authentication check as completed
+      console.log(user);
+    });
+
+    // Clean up the listener on component unmount
+    return () => unsubscribe();
+  }, []); // Empty dependency array, so it runs only once on component mount
+
+  useEffect(() => {
+    // Check if the authentication status has been determined and navigate accordingly
+    if (authChecked && !login) {
+      navigate("/login");
     }
-  };
+  }, [authChecked, login]); // Adding authChecked and login as dependencies
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  if (login) {
+    return children;
+  }
 
-  auth.onAuthStateChanged((user) => {
-    // user ? setLogin("logout") : setLogin("login");
-    setLogin(user !== null);
-    console.log(user)
-  });
-
-  return login ? children :<button onClick={singInWithGoogle}>login</button>;
+  // You might also consider rendering a loading state here, as auth state might not be determined yet.
+  return <p>Loading...</p>;
 }

@@ -190,7 +190,12 @@ b {
   font-size: 12px;
   text-decoration: none;
   cursor: pointer;
-  color: darkblue;
+  color: #0a7dc4;
+}
+.container a:hover {
+  opacity: 0.9;
+  text-decoration: underline;
+  transition: 0.4s ease-in-out;
 }
 .container .confirm-header {
   margin-top: 40px;
@@ -294,8 +299,8 @@ b {
   }
 }
 
-.container .sign-in-a{
-  margin-top: 2 0px;
+.container .sign-in-a {
+  margin-top: 20px;
   font-size: 16px;
   margin-left: 0;
 }

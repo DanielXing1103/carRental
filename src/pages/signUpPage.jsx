@@ -1,9 +1,9 @@
 import Navbar from "../components/nav_bar/navbar";
-import Login from "../components/auth/login";
+import Signup from "../components/auth/signUp";
 import Footer from "../components/footer/footer";
 import "./style.css";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   return (
     <div className="page" style={{ margin: "-10px" }}>
       <div
@@ -15,11 +15,11 @@ const LoginPage = () => {
         }}
       >
         <Navbar />
-        <Login />
+        <Signup />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;

@@ -8,6 +8,7 @@ import TestimonialsPage from "./pages/testimonials";
 import Contact from "./pages/contact";
 import LoginPage from "./pages/loginPage";
 import PrivateRoute from "./config/privateRoute";
+import SignUpPage from "./pages/signUpPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-
+        <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/Rentals" element={<Rentals />}></Route>
         <Route path="/confirmation" element={<ConfirmationPage />}></Route>
         <Route path="/about" element={<About />}></Route>

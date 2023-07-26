@@ -11,13 +11,6 @@ const Navbar = () => {
   const [login, setLogin] = useState(false);
   const [bar, setBars] = useState(false);
 
-  const singInWithGoogle = async () => {
-    try {
-      await signInWithRedirect(auth, googleProvider);
-    } catch (err) {
-      console.error(err);
-    }
-  };
   const logout = async () => {
     try {
       await signOut(auth);
