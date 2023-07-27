@@ -21,7 +21,7 @@ const FleetSlide = () => {
         <p className="title">View our fleet.</p>
       </div>
       <div className="slider-content">
-        <div className="slides">
+        <div className="slides"> 
           {fleets.map((fleet, fleetIndex) => {
             const { name, image, description, id } = fleet;
             let position;

@@ -38,22 +38,28 @@ const Confirmation = (props) => {
   const requestId = localStorage.getItem("requestId");
 
   const handleSubmit = async () => {
-    console.log(requestId);
     try {
+      // Attempt to add a new document to the 'bookCollectionRef' collection in Firebase Firestore
       await addDoc(bookCollectionRef, {
-        dates: localDates,
-        car: localCar,
-        contacts: localContacts,
-        requestId: requestId,
-        bookDate: formattedDate,
-        email: user.email,
+        // Data to be added to the document
+        dates: localDates, // An array of selected dates 
+        car: localCar, // Details of the selected car for booking
+        contacts: localContacts, // Contact information of the user making the booking
+        requestId: requestId, // A unique identifier for the booking request
+        bookDate: formattedDate, // The formatted date of the booking
+        email: user.email, // The email of the currently logged-in user 
       });
+
+      // If the document addition is successful, remove the temporary data from local storage
       localStorage.removeItem("dates");
       localStorage.removeItem("car");
       localStorage.removeItem("contacts");
       localStorage.removeItem("requestId");
+
+      // Navigate to the "/confirmation" route, page that shows a booking confirmation
       navigate("/confirmation");
-    } catch (error) {}
+    } catch (error) {
+    }
   };
 
   return (

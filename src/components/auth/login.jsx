@@ -21,17 +21,23 @@ const signInWithGoogle = async () => {
 };
 
 // Firebase auth state change listener, updates the 'login' state based on whether the user is authenticated or not
-auth.onAuthStateChanged((user) => {
-  setLogin(user !== null); // If 'user' is not null, it means the user is logged in, so 'login' will be set to 'true', otherwise 'false'
-});
+  useEffect(() => {
+    // Add an auth state change listener to track the user's login status
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLogin(!!user); // If 'user' is not null, it means the user is logged in, so 'login' will be set to 'true', otherwise 'false'
+    });
 
-// useEffect hook that runs whenever the 'login' state changes
-useEffect(() => {
-  // If the 'login' state becomes 'true' (user is logged in), navigate to the home page ("/")
-  if (login) {
-    navigate("/");
-  }
-}, [login]);
+    // Clean up the listener when the component is unmounted
+    return () => unsubscribe();
+  }, []);
+  // useEffect hook that runs whenever the 'login' state changes
+  
+  useEffect(() => {
+    // If the 'login' state becomes 'true' (user is logged in), navigate to the home page ("/")
+    if (login) {
+      navigate("/");
+    }
+  }, [login]);
 
 // Function to sign in with email and password using Firebase authentication
 const signInWithEmail = async (email, password) => {
@@ -47,6 +53,9 @@ const signInWithEmail = async (email, password) => {
       setAlert(true);
     } else if (e.code === "auth/invalid-email") {
       setAlertMessage("Email must be in correct format");
+      setAlert(true);
+    } else if (e.code === "auth/too-many-requests") {
+      setAlertMessage("Too many requests, please try again later");
       setAlert(true);
     } else {
       setAlertMessage(e.code); // Display the Firebase error code directly for other cases

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Bookcars from "../cars/bookcars.jsx";
-import { useNavigate } from "react-router-dom";
 import { collection, where, query, getDocs } from "firebase/firestore";
 import Loading from "../loading/loading.jsx";
 import { db, auth } from "../../config/firebase";
@@ -9,12 +8,11 @@ import "react-time-picker/dist/TimePicker.css";
 import "./date.css";
 
 function Booking() {
-  const navigate = useNavigate();
+  const [input, setInput] = useState(true); // For displaying an error message when not all input fields are filled
+  const [display, setDisplay] = useState(1); // Controls page display and navigation
+  const [loading, setLoading] = useState(true); // Controls loading state while fetching data
 
-  const [input, setInput] = useState(true); //for error message when not all input are filled
-  const [display, setDisplay] = useState(1); //controls page display
-  const [loading, setLoading] = useState(true);
-  // get all possible data
+  // Get all possible data from local storage
   const localDates = localStorage.getItem("dates");
   const localCar = localStorage.getItem("car");
   const localContacts = localStorage.getItem("contacts");
@@ -24,26 +22,43 @@ function Booking() {
     collection(db, "booking"),
     where("email", "==", user.email)
   );
+
   useEffect(() => {
+    // Function to fetch the list of booking requests for the current user
     const getRequestList = async () => {
       try {
+        // Fetch data from Firestore using the 'requestQuery' to filter bookings based on the current user's email
         const rawData = await getDocs(requestQuery);
+
+        // Transform the raw data into a more usable format
         const data = rawData.docs.map((doc) => {
           return { bookData: doc.data(), bookID: doc.id };
         });
+
+        // Update the 'loading' state to 'false' to indicate that the data fetching is complete
         setLoading(false);
       } catch (error) {
+        // Handle any errors that may occur during data fetching
         console.log(error);
+
+        // Set the 'loading' state to 'false' even if an error occurs to prevent an infinite loading state
         setLoading(false);
       }
     };
+
+    // Call the 'getRequestList' function to fetch the data when the component mounts
     getRequestList();
   }, []);
+
   useEffect(() => {
+    // Check if all the required data (dates, car, and contacts) are present in local storage
+    // If they are, set the 'display' state to 4 to jump to the confirmation page
     if (localDates && localCar && localContacts) {
-      setDisplay(4); //jump to confirmation if all data is filled and when it is not end page
+      setDisplay(4); // Jump to the confirmation page if all data is filled, otherwise, display the end page
     }
   });
+
+  // If data is still loading, display a loading indicator
   if (loading) {
     return <Loading />;
   }

@@ -24,10 +24,15 @@ const SignUp = () => {
   };
 
   // Firebase auth state change listener, updates the 'login' state based on whether the user is authenticated or not
-  auth.onAuthStateChanged((user) => {
-    setLogin(user !== null); // If 'user' is not null, it means the user is logged in, so 'login' will be set to 'true', otherwise 'false'
-  });
+  useEffect(() => {
+    // Add an auth state change listener to track the user's login status
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLogin(!!user); // If 'user' is not null, it means the user is logged in, so 'login' will be set to 'true', otherwise 'false'
+    });
 
+    // Clean up the listener when the component is unmounted
+    return () => unsubscribe();
+  }, []);
   // useEffect hook that runs whenever the 'login' state changes
   useEffect(() => {
     // If the 'login' state becomes 'true' (user is logged in), navigate to the home page ("/")
@@ -49,8 +54,8 @@ const SignUp = () => {
         setAlertMessage("Email Must Be In Correct Format");
         setAlert(true);
       } else if (e.code === "auth/email-already-in-use") {
-        setAlertMessage("Email Already In Use");  
-        setAlert(true); // Show the error message 
+        setAlertMessage("Email Already In Use");
+        setAlert(true); // Show the error message
       } else {
         setAlertMessage(e.code); // Display the Firebase error code directly for other cases
         setAlert(true);
@@ -71,14 +76,16 @@ const SignUp = () => {
     if (password !== password1 || !email || !password || !password1) {
       if (password !== password1) {
         setAlertMessage("Passwords do not match");
-      }
-      if (!email || !password || !password1) {
-        setAlertMessage("All fields required");
+      } else if (!email) {
+        setAlertMessage("Email field is required");
+      } else if (!password) {
+        setAlertMessage("Password field is required");
+      } else if (!password1) {
+        setAlertMessage("Repeat Password field is required");
       }
       setAlert(true); // Show the error message
-      return;
     } else {
-      setAlert(false); // Hide the error message if all fields are provided and passwords match
+      setAlert(false); // Hide th e error message if all fields are provided and passwords match
       createUserWithEmail(email, password);
     }
   };
