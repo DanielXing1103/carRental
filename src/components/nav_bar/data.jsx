@@ -6,8 +6,8 @@ const titles = [
   },
   {
     id: "2",
-    name: "Rentals",
-    url: "/rentals",
+    name: "Models",
+    url: "/models",
   },
   {
     id: "3",
