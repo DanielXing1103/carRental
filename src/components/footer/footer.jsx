@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-info">
         <div className="footer-unit">
           <p className="footer-title">carRental</p>
-          <p>
+          <p className="footer-text">
             "Explore the perfect wheels for your journey. carRental offers a
             wide selection of vehicles for all your driving needs."
           </p>
@@ -14,13 +14,13 @@ const Footer = () => {
             <span className="phone-icon">
               <AiFillPhone />
             </span>
-            <span className="phone-number">(123) 456-7890</span>
+            <span className="footer-text">(123) 456-7890</span>
           </div>
           <div className="email">
             <span className="email-icon">
               <AiOutlineMail />
             </span>
-            <span className="email-address">carrental@gmail.com</span>
+            <span className="footer-text">carrental@gmail.com</span>
           </div>
         </div>
         <div className="footer-unit">

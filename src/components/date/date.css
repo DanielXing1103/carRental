@@ -15,7 +15,7 @@
 .confirmation-content,
 .submitted-content {
   width: 75vw;
-  min-width: 300px;
+  min-width: 270px;
   padding: 30px 30px;
   border-radius: 10px;
   background-color: white;
@@ -24,7 +24,7 @@
   margin: 40px 0px;
   width: 45vw;
   border-radius: 10px;
-  min-width: 400px;
+  min-width: 270px;
   padding: 30px 20px;
   box-shadow: 0px 2px 8px rgba(244, 38, 62, 0.04),
     0px 1px 3px rgba(31, 37, 89, 0.07);
@@ -60,11 +60,11 @@
 }
 .container .form input {
   width: 42vw;
-  min-width: 300px;
+  min-width: 240px;
 }
 .contact-info .form input {
   width: 20vw;
-  min-width: 200px;
+  min-width: 240px;
 }
 .contact-info .info-form__2col input {
   width: 20vw;
@@ -148,6 +148,7 @@
 }
 .car-tag {
   display: grid;
+  width: 90vw;
   grid-auto-rows: 200px 40px 40px 100px 80px;
   background-color: white;
   box-shadow: 0px 2px 8px rgba(244, 38, 62, 0.04),
@@ -210,11 +211,11 @@ b {
   .contact-info .form input,
   .container .form input {
     width: 46vw;
-    min-width: 300px;
+    min-width: 270px;
   }
   .contact-info {
     width: 70vw;
-    min-width: 300px;
+    min-width: 270px;
   }
   .contact-info .info-form__2col,
   .container .info-form__2col {

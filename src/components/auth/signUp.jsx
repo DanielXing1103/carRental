@@ -8,65 +8,82 @@ import "../date/date.css";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const [login, setLogin] = useState(false);
-  const [alert, setAlert] = useState(false); //for error message when not all input are filled
-  const [alertMessage, setAlertMessage] = useState("");
-  const navigate = useNavigate();
-  const singInWithGoogle = async () => {
+  // Initializing state variables and corresponding setters using the 'useState' hook
+  const [login, setLogin] = useState(false); // Represents whether the user is logged in or not
+  const [alert, setAlert] = useState(false); // Represents whether to show an error message
+  const [alertMessage, setAlertMessage] = useState(""); // Stores the error message text
+  const navigate = useNavigate(); // React router's 'useNavigate' hook for navigation
+
+  // Function to sign in with Google using Firebase authentication
+  const signInWithGoogle = async () => {
     try {
       await signInWithRedirect(auth, googleProvider);
     } catch (err) {
-      console.error(err);
+      console.error(err); // Log any errors that occur during sign-in with Google
     }
   };
+
+  // Firebase auth state change listener, updates the 'login' state based on whether the user is authenticated or not
   auth.onAuthStateChanged((user) => {
-    setLogin(user !== null);
+    setLogin(user !== null); // If 'user' is not null, it means the user is logged in, so 'login' will be set to 'true', otherwise 'false'
   });
+
+  // useEffect hook that runs whenever the 'login' state changes
   useEffect(() => {
+    // If the 'login' state becomes 'true' (user is logged in), navigate to the home page ("/")
     if (login) {
       navigate("/");
     }
   }, [login]);
 
-  const createWithEmail = async (email, password) => {
+  // Function to create a new user with email and password using Firebase authentication
+  const createUserWithEmail = async (email, password) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
     } catch (e) {
-      if (e.code == "auth/email-already-in-use") {
-        setAlertMessage("Email Already In Use");
-        setAlert(true);
-      } else if (e.code == "auth/invalid-email") {
-        setAlertMessage("Email Must Be In Correct Format");
-        setAlert(true);
-      } else if (e.code == "auth/weak-password") {
+      // Handling different authentication error codes and updating the 'alert' and 'alertMessage' states accordingly
+      if (e.code === "auth/weak-password") {
         setAlertMessage("Password Is Too Weak");
         setAlert(true);
+      } else if (e.code === "auth/invalid-email") {
+        setAlertMessage("Email Must Be In Correct Format");
+        setAlert(true);
+      } else if (e.code === "auth/email-already-in-use") {
+        setAlertMessage("Email Already In Use");  
+        setAlert(true); // Show the error message 
       } else {
-        setAlertMessage(e.code);
+        setAlertMessage(e.code); // Display the Firebase error code directly for other cases
         setAlert(true);
       }
     }
   };
+
+  // Function to handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    // Get the email, password, and repeated password values from the form
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const password1 = document.getElementById("password-repeat").value;
 
-    if (password != password1 || !email || !password || !password1) {
-      if (password != password1) {
-        setAlertMessage("password does not match");
+    // Check if email and passwords are provided and if the passwords match, if not, show an alert
+    if (password !== password1 || !email || !password || !password1) {
+      if (password !== password1) {
+        setAlertMessage("Passwords do not match");
       }
       if (!email || !password || !password1) {
         setAlertMessage("All fields required");
       }
-      setAlert(true);
+      setAlert(true); // Show the error message
       return;
     } else {
-      setAlert(false);
-      createWithEmail(email, password);
+      setAlert(false); // Hide the error message if all fields are provided and passwords match
+      createUserWithEmail(email, password);
     }
   };
+
+  // Additional comments or explanation can be provided here for the context of the entire component or how it fits into the overall application.
 
   return (
     <div>
@@ -138,7 +155,7 @@ const SignUp = () => {
               </a>
             </p>
             <div id="or">or</div>
-            <a className="google-btn" onClick={singInWithGoogle}>
+            <a className="google-btn" onClick={signInWithGoogle}>
               <div className="google-icon-wrapper">
                 <img
                   className="google-icon"

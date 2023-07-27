@@ -1,8 +1,10 @@
 .page {
   font-family: "Poppins", sans-serif;
 }
+
 body {
   overflow-x: hidden;
+  min-width: 370px;
 }
 .divider {
   width: 50vw;
@@ -105,58 +107,6 @@ body {
   color: #2779a7;
 }
 
-/* Media screen */
-@media screen and (max-width: 950px) {
-  .nav-sections.none {
-    right: -300px;
-  }
-  .nav-sections {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px; /* Remove right padding */
-    padding-bottom: 30px;
-    position: fixed;
-    background-color: white;
-    right: 10px;
-    margin-top: 395px;
-    border-radius: 7px;
-    transition: 0.2s ease-in-out;
-  }
-
-  .nav-sections li {
-    margin-right: 0; /* Remove margin-right */
-    margin-bottom: 30px; /* Add bottom margin for spacing */
-  }
-  .dropdown {
-    display: block;
-  }
-  .nav-buttons {
-    margin-top: 10px;
-    margin-left: 0px;
-    justify-content: space-between;
-  }
-  .logo {
-    margin-left: 20px;
-    width: 200px;
-  }
-  .ads-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .ads-unit {
-    border: none;
-  }
-
-  .review-units {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .center-at-small {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 /* top car page */
 .top-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -201,8 +151,14 @@ body {
   margin-bottom: 4rem;
   font-weight: lighter;
 }
+.reserve-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .slides a,
 .reserve-buttons a {
+  text-align: center;
   text-decoration: none;
   color: white;
   padding: 18px;
@@ -227,7 +183,8 @@ body {
 .review-container,
 .accordion-container,
 .white-container {
-  margin: 0px 10px;
+  overflow-x: hidden;
+  margin: 0px -10px;
   padding: 0px 0px;
 }
 
@@ -255,12 +212,14 @@ body {
 }
 .topic-content p {
   color: rgb(153, 152, 152);
+  text-align: center;
 }
 .fleet-title,
 .topic-content h1 {
   color: #2779a7;
 }
 .title {
+  text-align: center;
   color: #2779a7;
   font-size: 3.4rem;
   margin: 20px;
@@ -325,7 +284,9 @@ body {
   transform: translateX(-50%);
 }
 .fleet-image {
-  height: 200px;
+  max-height: 250px;
+  min-height: 110px;
+  height: 17vw;
   margin-bottom: 10px;
 }
 .fleet-description {
@@ -354,6 +315,7 @@ body {
 }
 .ads-car {
   width: 70vw;
+  min-width: 370px;
 }
 .num-title {
   font-size: 120px;
@@ -372,7 +334,7 @@ body {
 }
 .ads-content {
   margin-top: 0;
-  font-size: 2vw;
+  font-size: 1.6rem;
   text-align: center;
   width: 80vw;
 }
@@ -413,7 +375,7 @@ body {
   text-align: center;
 }
 .review-title {
-  font-size: 3.7rem;
+  font-size: 3rem;
   margin: 5px;
   font-weight: bold;
   text-align: center;
@@ -433,10 +395,11 @@ body {
 }
 .review-unit {
   width: 40vw;
+  min-width: 300px;
   border-radius: 10px;
   border: 1px;
   background-color: rgb(255, 255, 255);
-  padding: 40px 20px;
+  padding: 40px 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -455,7 +418,8 @@ body {
   margin-bottom: 0;
 }
 .review-text {
-  width: 35vw;
+  min-width: 260px;
+  width: 36vw;
   color: gray;
 }
 .qoute {
@@ -573,6 +537,7 @@ body {
 
 /* footer */
 .footer-container {
+  overflow-x: hidden;
   background-color: rgb(251, 248, 248);
   margin: -10px;
   padding: 40px;
@@ -593,10 +558,6 @@ body {
   align-content: start;
 }
 
-.footer-title {
-  font-weight: bolder;
-  font-size: larger;
-}
 .phone,
 .email {
   display: flex;
@@ -604,22 +565,34 @@ body {
   align-items: center;
   gap: 7px;
 }
-.footer-url {
-  text-decoration: none;
-  margin: 5px 0;
-  color: black;
-  cursor: pointer;
-}
 .footer-url:hover {
   color: #2779a7;
   text-decoration: underline;
   transition: 0.3s ease-in-out;
 }
+.footer-url {
+  text-decoration: none;
+  margin: 5px 0;
+  color: black;
+  cursor: pointer;
+  font-size: 2vw;
+}
+.footer-title {
+  font-weight: bolder;
+  font-size: 3vw;
+}
+.copyright,
 .footer-text {
   margin: 10px 0;
+  font-size: 2vw;
 }
+.footer-unit .colored-button {
+  font-size: 2vw;
+}
+
 .footer-sub {
   height: 30px;
+  font-size: 2vw;
   border-radius: 5px;
   border-width: 0;
   background-color: rgb(237, 237, 237);
@@ -646,9 +619,11 @@ body {
 
 .welcome-details {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
+}
+.welcome-details div {
+  width: 30vw;
 }
 
 .sales {
@@ -780,3 +755,76 @@ body {
     transform: rotate(360deg); /* Rotate the spinner by 360 degrees */
   }
 }
+
+/* Media screen */
+@media screen and (max-width: 950px) {
+  .welcome-details {
+    flex-direction: column;
+  }
+  .sales {
+    width: 45vw;
+    min-width: 270px;
+  }
+  .nav-sections.none {
+    right: -300px;
+  }
+  .nav-sections {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; /* Remove right padding */
+    padding-bottom: 30px;
+    position: fixed;
+    background-color: white;
+    right: 1px;
+    margin-top: 520px;
+    border-radius: 7px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .nav-sections li {
+    margin-right: 0; /* Remove margin-right */
+    margin-bottom: 30px; /* Add bottom margin for spacing */
+  }
+  .dropdown {
+    display: block;
+  }
+  .nav-buttons {
+    margin-top: 10px;
+    margin-left: 0px;
+    justify-content: space-between;
+  }
+  .logo {
+    margin-left: 20px;
+    width: 200px;
+  }
+  .ads-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ads-unit {
+    border: none;
+  }
+
+  .review-units {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .center-at-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 800px) {
+  .footer-url,
+  .footer-text,
+  .footer-sub,
+  .copyright,
+  .footer-unit .colored-button {
+    font-size: 16px;
+  }
+  .footer-title {
+    font-size: 24px;
+  }
+}
+
