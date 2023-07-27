@@ -324,6 +324,7 @@ body {
   margin: 10px;
 }
 .num-description {
+  text-align: center;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -459,6 +460,7 @@ body {
 .q-a-container {
   margin-top: 100px;
   width: 50vw;
+  min-width: 200px;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 5px;
   background-color: white;
@@ -494,6 +496,7 @@ body {
   box-shadow: 0px 1px 10px 0 #2779a7;
 }
 .info-btn {
+  padding: 10px 10px;
   background: transparent;
   width: 35px;
   height: 35px;
@@ -762,8 +765,22 @@ body {
     flex-direction: column;
   }
   .sales {
-    width: 45vw;
-    min-width: 270px;
+    width: 60vw;
+
+    min-width: 228px;
+  }
+  .welcome-details div {
+    width: 70vw;
+    min-width: 266px;
+  }
+  .text-container {
+    width: 70vw;
+    min-width: 266px;
+    text-align: center;
+    margin: auto;
+  }
+  .ourPeople-container{
+    margin: 50px ;
   }
   .nav-sections.none {
     right: -300px;
@@ -827,4 +844,3 @@ body {
     font-size: 24px;
   }
 }
-

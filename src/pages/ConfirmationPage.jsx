@@ -6,9 +6,10 @@ import Footer from "../components/footer/footer";
 
 const ConfirmationPage = () => {
   return (
-    <div className="page" style={{ margin: "-10px" }}>
+    <div className="page">
       <div
         style={{
+          margin: "-10px" ,
           backgroundColor: "#2779a7",
           height: "100%",
           minHeight: "50vw",

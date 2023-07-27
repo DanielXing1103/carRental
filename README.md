@@ -39,3 +39,10 @@ is an online platform that facilitates car rentals for personal or business purp
 <img src='./src/image/signInPageScreenshot.png'/>
 
 </div>
+
+<h3 align='center'>Booking Page 🚙</h3>
+
+<div align='center'>
+<img src='./src/image/carSelectScreenShot.png'/>
+
+</div>
