@@ -1,5 +1,5 @@
 import Navbar from "../components/nav_bar/navbar";
-import Submitted from "../components/confirmation/submitted";
+import Submitted from "../components/confirmation/confirmation";
 import "../components/date/date.css";
 import "./style.css";
 import Footer from "../components/footer/footer";

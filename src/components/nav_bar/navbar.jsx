@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
 import logo from "../../image/png/logo-no-background.png";
@@ -16,6 +16,10 @@ const Navbar = () => {
   const logout = async () => {
     try {
       await signOut(auth);
+      localStorage.removeItem("dates");
+      localStorage.removeItem("car");
+      localStorage.removeItem("contacts");
+      localStorage.removeItem("requestId");
     } catch (error) {
       console.error(error);
     }

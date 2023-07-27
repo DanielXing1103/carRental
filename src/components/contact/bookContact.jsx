@@ -1,5 +1,5 @@
 import "../date/date.css";
-import Confirmation from "../confirmation/confirmation";
+import Confirmation from "../confirmation/check";
 import { useState, useEffect } from "react";
 import RequestIdGenerator from "../requestId/requestID";
 

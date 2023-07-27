@@ -24,10 +24,18 @@ function App() {
             </PrivateRoute>
           }
         ></Route>
+        <Route
+          path="/confirmation"
+          element={
+            <PrivateRoute>
+              <ConfirmationPage />
+            </PrivateRoute>
+          }
+        ></Route>
+
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/Rentals" element={<Rentals />}></Route>
-        <Route path="/confirmation" element={<ConfirmationPage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/testimonials" element={<TestimonialsPage />}></Route>
         <Route path="/contact" element={<Contact />}></Route>

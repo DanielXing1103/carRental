@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import Bookcars from "../cars/bookcars.jsx";
 import { useNavigate } from "react-router-dom";
+import { collection, where, query, getDocs } from "firebase/firestore";
+import Loading from "../loading/loading.jsx";
+import { db, auth } from "../../config/firebase";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-time-picker/dist/TimePicker.css";
 import "./date.css";
@@ -9,21 +12,41 @@ function Booking() {
   const navigate = useNavigate();
 
   const [input, setInput] = useState(true); //for error message when not all input are filled
-  const [display, setDisplay] = useState(3); //controls page display
-
+  const [display, setDisplay] = useState(1); //controls page display
+  const [loading, setLoading] = useState(true);
   // get all possible data
   const localDates = localStorage.getItem("dates");
   const localCar = localStorage.getItem("car");
   const localContacts = localStorage.getItem("contacts");
-  const isEnd = localStorage.getItem("end");
 
+  const user = auth.currentUser;
+  const requestQuery = query(
+    collection(db, "booking"),
+    where("email", "==", user.email)
+  );
   useEffect(() => {
-    if (isEnd) {
-      navigate("/confirmation");
-    } else if (localDates && localCar && localContacts) {
+    const getRequestList = async () => {
+      try {
+        const rawData = await getDocs(requestQuery);
+        const data = rawData.docs.map((doc) => {
+          return { bookData: doc.data(), bookID: doc.id };
+        });
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
+    getRequestList();
+  }, []);
+  useEffect(() => {
+    if (localDates && localCar && localContacts) {
       setDisplay(4); //jump to confirmation if all data is filled and when it is not end page
     }
   });
+  if (loading) {
+    return <Loading />;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
