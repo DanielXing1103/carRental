@@ -4,7 +4,7 @@
 <b>carRental</b>
 is an online platform that facilitates car rentals for personal or business purposes. Users can access the website through a secure login process, which provides them with an easy-to-navigate interface for comparing and reserving cars from a broad selection of vehicles with varying makes, models, sizes, and prices.</p>
 
-👉 Live Demo: <a href='https://car-rental-ten.vercel.app/'>Live Demo</a>
+👉 Live Demo: <a href=''>Live Demo</a>
 
 <h3>Build with:</h3>
   <h4>Deployment</h4>
