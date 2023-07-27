@@ -481,9 +481,9 @@ body {
 .accord-car1 {
   position: absolute;
   z-index: -1;
-  right: -300px;
+  right: -260px;
   top: -150px;
-  width: 30rem;
+  width: 29rem;
 }
 .accord-car2 {
   position: absolute;

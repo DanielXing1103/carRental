@@ -235,7 +235,8 @@ b {
 }
 .login-text {
   font-size: 1.5rem;
-  color: rgb(139, 139, 139);
+  font-weight: bold;
+  color: rgb(129, 129, 129);
   margin-bottom: 40px;
 }
 #or {
