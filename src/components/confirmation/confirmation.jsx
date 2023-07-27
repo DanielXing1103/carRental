@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { collection, where, query, getDocs } from "firebase/firestore";
 import { db, auth } from "../../config/firebase";
 import Loading from "../loading/loading";
+import car from "../../image/icon/car-driving.gif"
 
 const Submitted = () => {
   const navigate = useNavigate();
@@ -45,6 +46,34 @@ const Submitted = () => {
 
   if (isLoading) {
     return <Loading />;
+  }
+  if (requestList.length === 0) {
+    return (
+      <div className="container">
+        <div className="submitted-content">
+          <div className="text">Confirmation</div>
+          <div className="center">
+            <img src={car} alt="Animated car driving" className="car-driving"/>
+            <p>
+              <span className="checkmark">&#10004;</span> You haven't made any
+              requests yet!
+            </p>
+            <p>Please make a request first to see the details.</p>
+          </div>
+          <div className="center">
+            <button
+              className="colored-button"
+              onClick={() => {
+                navigate("/book");
+              }}
+            >
+              Book a Car
+            </button>
+          </div>
+        </div>
+        <div className="pad"></div>
+      </div>
+    );
   }
 
   return (

@@ -51,12 +51,29 @@ const Navbar = () => {
           const { name, url, id } = title;
           return (
             <li key={id}>
-              <a href={url}>{name}</a>
+              <a href={url} className="white-button">
+                {name}
+              </a>
             </li>
           );
         })}
-
-        <div className="nav-buttons">
+        <li>
+          <a
+            onClick={
+              user
+                ? () => {
+                    navigate("/confirmation");
+                  }
+                : () => {
+                    navigate("/signup");
+                  }
+            }
+            className="white-button"
+          >
+            {login ? "Confirmation" : "Sign up"}
+          </a>
+        </li>
+        <li>
           <a
             onClick={
               user
@@ -69,7 +86,7 @@ const Navbar = () => {
           >
             {login ? "logout" : "login"}
           </a>
-        </div>
+        </li>
       </ul>
 
       <div className="dropdown">

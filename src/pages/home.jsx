@@ -5,7 +5,7 @@ import FleetSlide from "../components/fleetSlider/fleetSlider";
 import AdsText from "../components/memberAds/memberAdsText";
 import AdsNumber from "../components/memberAds/memberAdsNumber";
 import Divider from "../components/divider/divider1";
-import BlackBanner  from "../components/blackbanner/blackbanner";
+import BlackBanner from "../components/blackbanner/blackbanner";
 import Testimonials from "../components/testimonials/testimonials.jsx";
 import Accordion from "../components/accordion/accordion";
 import Footer from "../components/footer/footer";
@@ -20,14 +20,16 @@ const Home = () => {
       <ThreeTopic />
       <Divider />
       <FleetSlide />
+      <div className="pad"></div>
       <BlackBanner />
+      <div className="pad"></div>
       <AdsText />
       <AdsNumber />
       <Divider />
       <Testimonials />
       <Divider />
       <Accordion />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

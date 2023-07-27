@@ -2,7 +2,7 @@ import Navbar from "../components/nav_bar/navbar";
 import SideTop from "../components/sideTop/sideTop";
 import Bookcars from "../components/cars/bookcars.jsx";
 import Footer from "../components/footer/footer";
-import Date from "../components/date/date";
+import BlackBanner from "../components/blackbanner/blackbanner";
 
 import { useState } from "react";
 import "./style.css";
@@ -17,6 +17,8 @@ const Rentals = () => {
       <div className="rental-page">
         <Bookcars display={display} setDisplay={setDisplay} rentalPage={true} />
       </div>
+      <div className="pad"></div>
+      <BlackBanner />
       <Footer />
     </div>
   );

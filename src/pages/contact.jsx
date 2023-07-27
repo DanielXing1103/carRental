@@ -9,6 +9,7 @@ const ContactPage = () => {
       <Navbar />
       <SideTop title="Contact" path="Home/Contact" />
       <Contact />
+      <Accordion/>
       <Footer />
     </div>
   );

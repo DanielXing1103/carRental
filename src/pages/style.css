@@ -46,19 +46,20 @@ body {
   margin-right: 10px;
 }
 
-.nav-sections li a {
+.white-button {
   text-decoration: none;
   color: gray;
   padding: 5px;
   transition: 0.2s ease-in-out;
   position: relative;
+  cursor: pointer;
 }
 
-.nav-sections li a:hover {
+.white-button:hover {
   color: #2779a7;
 }
 
-.nav-sections li a::after {
+.white-button::after {
   content: "";
   width: 0px;
   height: 2px;
@@ -70,14 +71,14 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.nav-sections li a:hover::after {
+.white-button:hover::after {
   width: 100%;
 }
 
 /* buttons */
 .nav-buttons {
   padding: 0 10px;
-  margin: 0 10pxy;
+  margin: 0 10px;
   justify-content: space-between;
 }
 
@@ -383,7 +384,7 @@ body {
 .black-banner {
   background-color: black;
   color: white;
-  margin: 100px -10px;
+  margin: 0 -10px;
 }
 .banner-title {
   font-size: 3.8rem;
@@ -705,7 +706,7 @@ body {
 .contactPage-container {
   margin: 10px -10px;
   padding: 100px 20px;
-  background-color: rgba(237, 236, 236, 0.951);
+  background-color: rgb(251, 248, 248);
 }
 .team-unit {
   margin: 20px 5px;
@@ -762,8 +763,8 @@ body {
 }
 /* Assuming .loading-spinner has the following styles */
 .loading-spinner {
-  border: 8px solid rgba(0, 0, 0, 0.3);
-  border-top: 8px solid gray;
+  border: 8px solid rgba(0, 0, 0, 0.3); /* Semi-transparent black border */
+  border-top: 8px solid rgba(255, 255, 255, 0.8); /* Semi-transparent white border */
   border-radius: 50%;
   width: 60px;
   height: 60px;
