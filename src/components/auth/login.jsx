@@ -1,26 +1,32 @@
 import { useState, useEffect } from "react";
 import { googleProvider, auth } from "../../config/firebase";
-import { signInWithRedirect, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import "../date/date.css";
 import { useNavigate } from "react-router-dom";
 
 const login = () => {
-// Initializing state variables and corresponding setters using the 'useState' hook
-const [login, setLogin] = useState(false); // Represents whether the user is logged in or not
-const [alert, setAlert] = useState(false); // Represents whether to show an error message
-const [alertMessage, setAlertMessage] = useState(""); // Stores the error message text
-const navigate = useNavigate(); // React router's 'useNavigate' hook for navigation
+  // Initializing state variables and corresponding setters using the 'useState' hook
+  const [login, setLogin] = useState(false); // Represents whether the user is logged in or not
+  const [alert, setAlert] = useState(false); // Represents whether to show an error message
+  const [alertMessage, setAlertMessage] = useState(""); // Stores the error message text
+  const navigate = useNavigate(); // React router's 'useNavigate' hook for navigation
 
-// Function to sign in with Google using Firebase authentication
-const signInWithGoogle = async () => {
-  try {
-    await signInWithRedirect(auth, googleProvider);
-  } catch (err) {
-    console.error(err); // Log any errors that occur during sign-in with Google
-  }
-};
+  // Function to sign in with Google using Firebase authentication
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (e) {
+      if (e.code === "auth/popup-closed-by-user") {
+        setAlertMessage("Auth window closed");
+        setAlert(true);
+      } else {
+        setAlertMessage(e.code);
+        setAlert(true);
+      }
+    }
+  };
 
-// Firebase auth state change listener, updates the 'login' state based on whether the user is authenticated or not
+  // Firebase auth state change listener, updates the 'login' state based on whether the user is authenticated or not
   useEffect(() => {
     // Add an auth state change listener to track the user's login status
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -31,7 +37,7 @@ const signInWithGoogle = async () => {
     return () => unsubscribe();
   }, []);
   // useEffect hook that runs whenever the 'login' state changes
-  
+
   useEffect(() => {
     // If the 'login' state becomes 'true' (user is logged in), navigate to the home page ("/")
     if (login) {
@@ -39,54 +45,53 @@ const signInWithGoogle = async () => {
     }
   }, [login]);
 
-// Function to sign in with email and password using Firebase authentication
-const signInWithEmail = async (email, password) => {
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-  } catch (e) {
-    // Handling different authentication error codes and updating the 'alert' and 'alertMessage' states accordingly
-    if (e.code === "auth/wrong-password") {
-      setAlertMessage("Wrong Password");
-      setAlert(true); // Show the error message
-    } else if (e.code === "auth/user-not-found") {
-      setAlertMessage("User Not Found");
-      setAlert(true);
-    } else if (e.code === "auth/invalid-email") {
-      setAlertMessage("Email must be in correct format");
-      setAlert(true);
-    } else if (e.code === "auth/too-many-requests") {
-      setAlertMessage("Too many requests, please try again later");
-      setAlert(true);
-    } else {
-      setAlertMessage(e.code); // Display the Firebase error code directly for other cases
-      setAlert(true);
+  // Function to sign in with email and password using Firebase authentication
+  const signInWithEmail = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (e) {
+      // Handling different authentication error codes and updating the 'alert' and 'alertMessage' states accordingly
+      if (e.code === "auth/wrong-password") {
+        setAlertMessage("Wrong Password");
+        setAlert(true); // Show the error message
+      } else if (e.code === "auth/user-not-found") {
+        setAlertMessage("User Not Found");
+        setAlert(true);
+      } else if (e.code === "auth/invalid-email") {
+        setAlertMessage("Email must be in correct format");
+        setAlert(true);
+      } else if (e.code === "auth/too-many-requests") {
+        setAlertMessage("Too many requests, please try again later");
+        setAlert(true);
+      } else {
+        setAlertMessage(e.code); // Display the Firebase error code directly for other cases
+        setAlert(true);
+      }
     }
-  }
-};
+  };
 
-// Function to handle form submission
-const handleSubmit = (e) => {
-  e.preventDefault(); // Prevent the default form submission behavior
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
 
-  // Get the email and password values from the form
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    // Get the email and password values from the form
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  // Check if email and password are provided, if not, show an alert
-  if (!email || !password) {
-    setAlertMessage("All fields required");
-    setAlert(true); // Show the error message
-    return;
-  } else {
-    setAlert(false); // Hide the error message if both email and password are provided
-  }
+    // Check if email and password are provided, if not, show an alert
+    if (!email || !password) {
+      setAlertMessage("All fields required");
+      setAlert(true); // Show the error message
+      return;
+    } else {
+      setAlert(false); // Hide the error message if both email and password are provided
+    }
 
-  // Call the 'signInWithEmail' function to attempt signing in with the provided email and password
-  signInWithEmail(email, password);
-};
+    // Call the 'signInWithEmail' function to attempt signing in with the provided email and password
+    signInWithEmail(email, password);
+  };
 
-// Additional comments or explanation can be provided here for the context of the entire component or how it fits into the overall application.
-
+  // Additional comments or explanation can be provided here for the context of the entire component or how it fits into the overall application.
 
   return (
     <div>

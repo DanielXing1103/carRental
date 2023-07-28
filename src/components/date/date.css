@@ -148,7 +148,7 @@
 }
 .car-tag {
   display: grid;
-  width:280px;
+  width: 280px;
   grid-auto-rows: 200px 40px 40px 100px 80px;
   background-color: white;
   box-shadow: 0px 2px 8px rgba(244, 38, 62, 0.04),
@@ -236,6 +236,7 @@ b {
 }
 .login-text {
   font-size: 1.5rem;
+  text-align: center;
   font-weight: bold;
   color: rgb(129, 129, 129);
   margin-bottom: 40px;
@@ -291,7 +292,7 @@ b {
     color: #fff;
     font-size: 14px;
     letter-spacing: 0.2px;
-    font-family: "Roboto";
+    font-family: "Roboto Sans", sans-serif;
     font-weight: bold;
   }
   &:hover {
@@ -308,10 +309,10 @@ b {
   margin-left: 0;
 }
 
-.car-driving{
+.car-driving {
   width: 200px;
 }
 
-.submitted-content li strong{
-margin: 0 10px;
+.submitted-content li strong {
+  margin: 0 10px;
 }

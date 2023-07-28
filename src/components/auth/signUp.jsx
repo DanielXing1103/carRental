@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { googleProvider, auth } from "../../config/firebase";
 import {
-  signInWithRedirect,
+  signInWithPopup,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import "../date/date.css";
@@ -17,9 +17,15 @@ const SignUp = () => {
   // Function to sign in with Google using Firebase authentication
   const signInWithGoogle = async () => {
     try {
-      await signInWithRedirect(auth, googleProvider);
-    } catch (err) {
-      console.error(err); // Log any errors that occur during sign-in with Google
+      await signInWithPopup(auth, googleProvider);
+    } catch (e) {
+      if (e.code === "auth/popup-closed-by-user") {
+        setAlertMessage("Auth window closed");
+        setAlert(true);
+      } else {
+        setAlertMessage(e.code);
+        setAlert(true);
+      }
     }
   };
 

@@ -11,7 +11,6 @@ const book = () => {
           margin: "-10px",
           backgroundColor: "#2779a7",
           height: "100%",
-          minHeight: "50vw",
           padding: "9px",
         }}
       >

@@ -9,7 +9,7 @@ body {
 .divider {
   width: 50vw;
   height: 120px;
-  margin-top: 20px;
+  margin-top: 20px; 
   margin-bottom: 20px;
 }
 
@@ -732,13 +732,22 @@ body {
   flex-direction: column;
   align-items: center;
 }
+/* Update the existing .loading-container styles */
 .loading-container {
   display: flex;
   flex-direction: column;
   align-items: center; /* Horizontal centering */
   justify-content: center; /* Vertical centering */
-  height: 100vh; /* Adjust the height to control the vertical centering area */
+  height: 100%; /* Adjust the height to control the vertical centering area */
+  position: fixed; /* Position the container relative to the viewport */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  right: 0; /* Align to the right of the viewport */
+  bottom: 0; /* Align to the bottom of the viewport */
+  z-index: 99 ; /* Set a high z-index to ensure it overlays other content */
+  background-color: white;
 }
+
 /* Assuming .loading-spinner has the following styles */
 .loading-spinner {
   border: 8px solid rgba(0, 0, 0, 0.3); /* Semi-transparent black border */
@@ -748,6 +757,7 @@ body {
   height: 60px;
   animation: spin 1s linear infinite; /* Apply the spin animation */
 }
+
 
 /* Define the keyframes for the spin animation */
 @keyframes spin {
@@ -844,3 +854,4 @@ body {
     font-size: 24px;
   }
 }
+
